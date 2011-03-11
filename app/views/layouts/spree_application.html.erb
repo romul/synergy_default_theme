@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <%= hook :inside_head do %>
+      <%= render 'shared/head' %>
+  <% end %>
+  <%= stylesheet_link_tag 'style' %>
+</head>
+
+<body class="<%= body_class %>" id="<%= @body_id %>">
+
+<div align="center">
+  <div class="fixed_width">
+    <div style="height: 4px; font-size: 0"></div>
+    <div class="main_top" align="center">
+      <div class="header_panel">
+        <table style="width: 100%; height: 100%">
+          <tr>
+            <td align="center" style="width: 220px; padding-left: 30px;">
+              <%= link_to image_tag("/images/logo.png", :alt => "Synergy logo"), root_url %>
+            </td>
+            <td align="center" style="width: 400px">
+              <%= render 'shared/search' %>
+            </td>
+            <% if store_menu? %>
+                <td align="center">
+                    <%= link_to_cart %>
+                </td>
+                <td align="center">
+                  <a id="compare_products" href="#">Сравнение товаров (0)</a>
+                </td>
+            <% end %>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div align="left" style="margin-top: 1em">
+        <%= hook :shared_login_bar %>
+      </div>
+      <div>
+        <% if content_for?(:sidebar) %>
+            <div class="sidebar">
+              <%= hook :sidebar do %>
+                  <%= yield :sidebar %>
+              <% end %>
+            </div>
+        <% end %>
+
+        <div class="content">
+          <% if flash.notice %>
+              <div class="flash notice"><%= flash.notice %></div>
+          <% end %>
+          <% if flash[:error] %>
+              <div class="flash errors"><%= flash[:error] %></div>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 10px;"></div>
+
+    <div class="footer">
+      <table style="width: 100%; height: 100%">
+        <tr>
+          <td align="right" valign="middle">
+            <ul class="footer_menu">
+              <li><a href="#">Партнерство</a></li>
+              <li><a href="#">О компании</a></li>
+              <li><a href="#">Реквизиты</a></li>
+              <li><a href="#">Обратная связь</a></li>
+              <li><a href="#">Помощь</a></li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/google_analytics' %>
+
+</body>
+</html>

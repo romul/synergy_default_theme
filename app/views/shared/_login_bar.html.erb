@@ -1,0 +1,6 @@
+<% if current_user %>
+  Добро пожаловать, <%= link_to current_user.email, account_path %>!
+  <%= link_to t('logout'), destroy_user_session_path %>
+<% else %>
+  Добро пожаловать, <%= link_to t('log_in'), login_path %>.
+<% end %>

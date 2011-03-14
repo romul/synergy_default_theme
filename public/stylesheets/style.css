@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 { font-family: Verdana, serif; }
   vertical-align: bottom;
   color: white;
 }
-.header_panel #cart {
+.header_panel a.empty, .header_panel a.full {
   background: url("../images/cart.png") no-repeat left center;
   padding-left: 29px;
   padding: 20px 0 20px 29px;

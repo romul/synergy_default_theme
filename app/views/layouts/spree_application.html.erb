@@ -6,8 +6,17 @@
   <% end %>
   <%= stylesheet_link_tag 'style' %>
 </head>
+<%
+if @body_class.nil?
+  if content_for?(:sidebar)
+    @body_class = 'two-col'
+  else
+    @body_class = 'one-col'
+  end
+end
+ %>
 
-<body class="<%= body_class %>" id="<%= @body_id %>">
+<body class="<%= @body_class %>" id="<%= @body_id %>">
 
 <div align="center">
   <div class="fixed_width">

@@ -1,0 +1,11 @@
+<% unless @product_properties.empty? %>
+
+<table id="product-properties" class="table-display">
+<% for product_property in @product_properties %>
+  <tr class="property-row <%= cycle 'odd', 'even' %>">
+    <td class="property-type"><%= product_property.property.presentation %></td>
+    <td class="property-value"><%= product_property.value %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>

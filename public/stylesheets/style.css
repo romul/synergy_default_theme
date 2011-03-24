@@ -65,13 +65,13 @@ h1, h2, h3, h4, h5, h6 {
 .header_panel a.empty, .header_panel a.full {
   background: url("../images/cart.png") no-repeat left center;
   padding-left: 29px;
-  padding: 20px 0 20px 29px;
+  padding: 10px 0 10px 29px;
 }
 
 .header_panel #compare_products {
   background: url("../images/libra.png") no-repeat left center;
   padding-left: 29px;
-  padding: 20px 0 20px 29px;
+  padding: 10px 0 10px 29px;
 }
 
 .header_panel a {
@@ -310,4 +310,8 @@ button, a.button, input.button {
 .tooltip_bottom {
   background: url("../images/bubblepopup_bottom.png") no-repeat;
   height: 22px;
+}
+
+#compare_products.shown {
+  border-bottom: 2px solid black;
 }

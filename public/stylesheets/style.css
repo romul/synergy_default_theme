@@ -315,3 +315,9 @@ button, a.button, input.button {
 #compare_products.shown {
   border-bottom: 2px solid black;
 }
+
+body.two-col #content {
+    display: block;
+    float: none;
+    width: auto;
+}

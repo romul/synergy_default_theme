@@ -321,3 +321,14 @@ body.two-col #content {
     float: none;
     width: auto;
 }
+
+#product_description_menu {
+  margin-top: 1em;
+}
+
+.prices {
+  border: 1px solid silver;
+  border-radius: 5px;
+  background: #fdf3e8;
+  padding: 10px;
+}

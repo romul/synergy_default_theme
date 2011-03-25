@@ -329,6 +329,9 @@ body.two-col #content {
 .prices {
   border: 1px solid silver;
   border-radius: 5px;
-  background: #fdf3e8;
   padding: 10px;
+}
+
+.content h2 {
+  font-size: 14pt;
 }

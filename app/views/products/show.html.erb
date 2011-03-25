@@ -26,24 +26,11 @@
   <div id="cart-form">
     <%= render 'cart_form' %>
   </div>
-<% end %>
+  <% end %>
 
-  <div id="product_description_menu">
-    <table cellpadding="0" cellspacing="0">
-      <tr>
-        <td><%= (image_tag 'star_orange.png') * 5  %></td>
-        <td><%= link_to t(:add_to_comparison, :scope => :compare_products), add_to_comparison_path(@product), :class => 'compare', :style => "z-index:10;", :remote => true if @product.can_be_compared? %></td>
-      </tr>
-      <tr>
-        <td>Отзывы(18)</td>
-        <td>Добавить отзыв</td>
-      </tr>
-    </table>
-  </div>
-
-  <div id="product_like_buttons">
+  <!-- <div id="product_like_buttons">
     <%= image_tag 'facebook_like.png' %> <%= image_tag 'vkontakte_like.png' %> <%= image_tag 'tweet_like.png' %>
-  </div>
+  </div> -->
 
   <h2>Описание:</h2>
   <%= hook :product_description do %>

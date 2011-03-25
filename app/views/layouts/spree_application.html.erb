@@ -3,6 +3,7 @@
 <head>
   <%= hook :inside_head do %>
     <%= render 'shared/head' %>
+    <%= javascript_include_tag 'startup_script' %>
   <% end %>
   <%= stylesheet_link_tag 'style' %>
 </head>
@@ -34,18 +35,18 @@
             <% if store_menu? and not current_page?(cart_path) %>
               <div style="margin-bottom: 1em"><%= link_to_cart %></div>
             <% end %>
-            <div><a id="compare_products" href="#">Сравнение товаров (0)</a></div>
+            <% if @comparable_products %>
+            <div><%= link_to "Сравнение товаров (#{@comparable_products.count})", compare_products_path, {:id => "compare_products"} %></div>
             <div id="tooltip" class="tooltip" style="display: none">
               <div class="tooltip_top"></div>
               <div class="tooltip_middle">
                 <div style="font-size: 0px">&nbsp;</div>
-                <div class="tooltip_content">
-                  <%= hook :tooltip_content %>
-                </div>
+                <div class="tooltip_content" id="tooltip_content"></div>
                 <div style="font-size: 0px">&nbsp;</div>
               </div>
               <div class="tooltip_bottom"></div>
             </div>
+            <% end %>
           </td>
         </tr>
       </table>

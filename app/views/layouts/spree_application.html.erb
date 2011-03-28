@@ -33,8 +33,10 @@
           </td>
           <td align="center">
             <% if store_menu? and not current_page?(cart_path) %>
-              <div style="margin-bottom: 1em"><%= link_to_cart %></div>
+              <div><%= link_to_cart %></div>
             <% end %>
+          </td>
+          <td align="center">
             <% if @comparable_products %>
             <div><%= link_to "Сравнение товаров (#{@comparable_products.count})", compare_products_path, {:id => "compare_products"} %></div>
             <div id="tooltip" class="tooltip" style="display: none">

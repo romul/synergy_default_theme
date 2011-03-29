@@ -5,6 +5,15 @@
   <% end %>
 <% end %>
 
+<script type="text/javascript">
+  $(function() {
+    $('#description_add_review_link').click(function() {
+      show_add_review_container();
+      $('#add_review_link').slideUp();
+    });
+  });
+</script>
+
 <% @body_id = 'product-details' %>
 
 <div id="product-show">
@@ -28,9 +37,22 @@
       </div>
     <% end %>
 
-    <!-- <div id="product_like_buttons">
-    <%= image_tag 'facebook_like.png' %> <%= image_tag 'vkontakte_like.png' %> <%= image_tag 'tweet_like.png' %>
-  </div> -->
+    <div id="product_description_menu">
+      <table cellpadding="0" cellspacing="0" style="width: 300px">
+        <tr>
+          <td><%= render 'shared/rating', :product => @product %></td>
+          <td><%= render 'compare' if @comparable_products %></td>
+        </tr>
+        <tr>
+          <td><a href="#reviews_anc">Отзывы(<%= @product.reviews.count %>)</a></td>
+          <td><a id="description_add_review_link" href="#reviews_anc">Добавить отзыв</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="product_like_buttons">
+      <%= image_tag 'facebook_like.png' %> <%= image_tag 'vkontakte_like.png' %> <%= image_tag 'tweet_like.png' %>
+    </div>
 
     <h2>Описание:</h2>
     <%= hook :product_description do %>
@@ -43,7 +65,7 @@
   </div>
 </div>
 
-
-
 <%= render 'taxons' %>
+
+<%= render 'shared/reviews' %>
 

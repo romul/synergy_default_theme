@@ -3,7 +3,7 @@ body.one-col .content {
 }
 
 body.two-col .content {
-  margin-left: 270px;
+  margin-left: 260px;
 }
 
 p img {
@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrapper {
-  width: 980px;
+  width: 1020px;
 }
 
 .sidebar {
@@ -119,6 +119,11 @@ h1, h2, h3, h4, h5, h6 {
 .content {
   text-align: left;
   padding-top: 1em;
+}
+
+.content h3 {
+  margin-top: 1.8em;
+  color: #502559;
 }
 
 .cart_table {
@@ -261,7 +266,7 @@ ul.footer_menu li a {
   display: block;
   width: auto;
   float: none;
-  margin-left: 225px;
+  margin-left: 220px;
   border-right: none;
   margin-right: 0;
   padding-right: 0;
@@ -280,7 +285,7 @@ ul.footer_menu li a {
 }
 
 #product-description h1 {
-  font-size: 16pt;
+  font-size: 24pt;
 }
 
 #product-description h2 {
@@ -295,7 +300,7 @@ ul.footer_menu li a {
 }
 
 #product-properties .property-type {
-  width: 120px;
+  width: 180px;
   font-weight: bold;
 }
 
@@ -348,10 +353,9 @@ body.two-col #content {
   margin-top: 1em;
 }
 
-.prices {
-  border: 1px solid silver;
-  border-radius: 5px;
-  padding: 10px;
+#cart_wrapper .prices {
+  text-align: right;
+  margin-bottom: .4em;
 }
 
 .content h2 {
@@ -420,4 +424,20 @@ ul.thumbnails li a {
   height: 42px;
   width: 42px;
   display: block;
+}
+
+#cart_wrapper {
+  float: right;
+}
+
+#cart_wrapper .price {
+  font-size: 18pt !important;
+  color: black;
+}
+
+.red-button {
+  background: url("../images/red_button_bg.png") repeat-x left center red !important;
+  color: white;
+  font-size: 10pt !important;
+  border-radius: 12px;
 }

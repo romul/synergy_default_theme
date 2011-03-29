@@ -7,40 +7,40 @@
 
 <% @body_id = 'product-details' %>
 
-<div>
-<div id="product-images">
-  <%= hook :product_images do %>
-  <div id="main-image">
-    <%= render 'image' %>
+<div id="product-show">
+  <div id="product-images">
+    <%= hook :product_images do %>
+      <div id="main-image">
+        <%= render 'image' %>
+      </div>
+      <div id="thumbnails">
+        <%= render 'thumbnails', :product => @product %>
+      </div>
+    <% end %>
   </div>
-  <div id="thumbnails">
-    <%= render 'thumbnails', :product => @product %>
-  </div>
-  <% end %>
-</div>
 
-<div id="product-description">
-  <h1><%= @product.name %></h1>
+  <div id="product-description">
+    <h1><%= @product.name %></h1>
 
-  <%= hook :cart_form do %>
-  <div id="cart-form">
-    <%= render 'cart_form' %>
-  </div>
-  <% end %>
+    <%= hook :cart_form do %>
+      <div id="cart-form">
+        <%= render 'cart_form' %>
+      </div>
+    <% end %>
 
-  <!-- <div id="product_like_buttons">
+    <!-- <div id="product_like_buttons">
     <%= image_tag 'facebook_like.png' %> <%= image_tag 'vkontakte_like.png' %> <%= image_tag 'tweet_like.png' %>
   </div> -->
 
-  <h2>Описание:</h2>
-  <%= hook :product_description do %>
-    <%= product_description(@product) rescue t("product_has_no_description") %>
-  <% end %>
-  <h2>Характеристики:</h2>
-  <%= hook :product_properties do %>
-    <%= render 'properties' %>
-  <% end %>
-</div>
+    <h2>Описание:</h2>
+    <%= hook :product_description do %>
+      <%= product_description(@product) rescue t("product_has_no_description") %>
+    <% end %>
+    <h2>Характеристики:</h2>
+    <%= hook :product_properties do %>
+      <%= render 'properties' %>
+    <% end %>
+  </div>
 </div>
 
 

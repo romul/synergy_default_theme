@@ -11,6 +11,15 @@
       show_add_review_container();
       $('#add_review_link').slideUp();
     });
+
+    var product_variants = $('#product-variants').detach();
+    $('#product-variants-container').append(product_variants);
+    var r_buttons = $('#product-variants input[type=radio]');
+    $('#cart_wrapper').append('<input id="cart-variant-type" type="hidden" name="' + r_buttons[0].name + '" value="' + r_buttons[0].value + '" />');
+    r_buttons[0].checked = 'checked';
+    r_buttons.click(function(e) {
+      $('#cart-variant-type').val($(this).val());
+    });
   });
 </script>
 
@@ -26,6 +35,9 @@
         <%= render 'thumbnails', :product => @product %>
       </div>
     <% end %>
+
+    <div id="product-variants-container">
+    </div>
   </div>
 
   <div id="product-description">
@@ -65,7 +77,43 @@
   </div>
 </div>
 
-<%= render 'taxons' %>
+<div>
+  <h3>Похожие товары:</h3>
 
+  <ul class="similar_product_list">
+    <li>
+      <div class="similar_product_image_container">
+        <img src="/assets/products/87/small/i.jpg">
+      </div>
+      <div>
+        <div><a href="#">Lenovo IdeaCentre B305</a></div>
+        <div><%= image_tag('star_orange.png') * 5 %></div>
+        <div class="similar_product_price">195 000 руб.</div>
+      </div>
+    </li>
+    <li>
+      <div class="similar_product_image_container">
+        <img src="/assets/products/87/small/i.jpg">
+      </div>
+      <div>
+        <div><a href="#">Lenovo IdeaCentre B305</a></div>
+        <div><%= image_tag('star_orange.png') * 5 %></div>
+        <div class="similar_product_price">195 000 руб.</div>
+      </div>
+    </li>
+    <li>
+      <div class="similar_product_image_container">
+        <img src="/assets/products/87/small/i.jpg">
+      </div>
+      <div>
+        <div><a href="#">Lenovo IdeaCentre B305</a></div>
+        <div><%= image_tag('star_orange.png') * 5 %></div>
+        <div class="similar_product_price">195 000 руб.</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<%= render 'taxons' %>
 <%= render 'shared/reviews' %>
 

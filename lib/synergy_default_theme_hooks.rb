@@ -1,3 +1,3 @@
 class SynergyDefaultThemeHooks < Spree::ThemeSupport::HookListener
-  # custom hooks go here
+  insert_after :admin_inside_taxonomy_form, 'admin/taxonomies/show_on_homepage_field'
 end

@@ -1,0 +1,26 @@
+<% content_for :sidebar do %>
+  <%= hook :homepage_sidebar_navigation do %>
+    <% if "products" == @current_controller && @taxon %>
+      <%= render "shared/filters" %>
+    <% else %>
+      <%= render "shared/taxonomies" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% @homepage_taxonomies.each do |taxonomy| %>
+  <% taxonomy.root.children.each do |taxon| %>
+
+    <table class="section_header">
+      <tr>
+        <td>
+          <h1>
+            <%= taxon.name %>
+          </h1>
+        </td>
+      </tr>
+    </table>
+
+    <%= render :partial => "shared/products", :locals => {:products => taxon_preview(taxon, 6), :taxon => taxon} %>
+  <% end %>
+<% end %>

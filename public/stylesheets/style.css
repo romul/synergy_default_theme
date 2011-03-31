@@ -517,3 +517,7 @@ hr.space {
   color: black;
   text-align: right;
 }
+
+.pagination {
+  clear: both;
+}

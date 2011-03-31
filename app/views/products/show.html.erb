@@ -58,7 +58,7 @@
           <td><%= render 'compare' if @comparable_products %></td>
         </tr>
         <tr>
-          <td><a href="#reviews_anc">Отзывы(<%= @product.reviews.count %>)</a></td>
+          <td><a href="#reviews_anc">Отзывы(<%= @product.reviews.approved.count %>)</a></td>
           <td><a id="description_add_review_link" href="#reviews_anc">Добавить отзыв</a></td>
         </tr>
       </table>

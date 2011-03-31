@@ -488,3 +488,25 @@ ul.thumbnails li a {
 hr.space {
   clear: none;
 }
+
+#cart-detail {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+#cart-detail th {
+  background: url("../images/cart_th_bg.png") repeat-x;
+  height: 34px;
+  border-bottom: 1px solid silver;
+}
+
+#cart-detail .price {
+  font-size: 16pt;
+}
+
+#subtotal h3 {
+  margin: 0 0 1em;
+  font-size: 16pt;
+  color: black;
+  text-align: right;
+}

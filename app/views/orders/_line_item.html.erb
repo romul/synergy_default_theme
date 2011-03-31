@@ -1,0 +1,38 @@
+<tr class="<%= cycle('', 'alt') %>">
+  <td>
+    <%- locals = {:item_form => item_form, :variant => variant, :line_item => line_item} %>
+    <%= hook :cart_item_image, locals do %>
+      <% if variant.images.length == 0 %>
+        <%= small_image(variant.product) %>
+      <% else %>
+        <%=  image_tag variant.images.first.attachment.url(:small)   %>
+      <% end %>
+    <% end %>
+  </td>
+  <td>
+    <%= hook :cart_item_description, locals do %>
+      <h4><%= link_to variant.product.name,  product_path(variant.product) %></h4>
+      <%= variant_options variant %>
+      <%= truncate(variant.product.description, :length => 100, :omission => "...") %>
+    <% end %>
+  </td>
+  <td>
+    <%= hook :cart_item_price, locals do %>
+      <%=  product_price(line_item) %>
+    <% end %>
+  </td>
+  <td>
+    <%= hook :cart_item_quantity, locals do %>
+      <%= item_form.text_field :quantity, :size => 3, :class => "line_item_quantity" %>
+    <% end %>
+  </td>
+
+  <td>
+    <%= hook :cart_item_total, locals do %>
+      <div class="price"><%= format_price(product_price(line_item, :format_as_currency => false) * line_item.quantity) unless line_item.quantity.nil? %></div>
+    <% end %>
+    <%= hook :cart_item_delete, locals do %>
+      <div><%= link_to(t(:delete), '#', :class => 'delete') %></div>
+    <% end %>
+  </td>
+</tr>

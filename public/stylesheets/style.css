@@ -1,5 +1,6 @@
 body.one-col .content {
   margin-left: auto;
+  width: 1020px !important;
 }
 
 body.two-col .content {
@@ -170,6 +171,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   width: 100%;
   margin: 0;
+  text-align: center;
 }
 
 .table_wrapper td {
@@ -178,6 +180,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .table_wrapper td td {
   padding: 2px;
+}
+
+.table_wrapper td.main_cell {
+  vertical-align: top;
+  padding-bottom: 4em;
 }
 
 .footer_table {

@@ -13,13 +13,15 @@
     });
 
     var product_variants = $('#product-variants').detach();
-    $('#product-variants-container').append(product_variants);
-    var r_buttons = $('#product-variants input[type=radio]');
-    $('#cart_wrapper').append('<input id="cart-variant-type" type="hidden" name="' + r_buttons[0].name + '" value="' + r_buttons[0].value + '" />');
-    r_buttons[0].checked = 'checked';
-    r_buttons.click(function(e) {
-      $('#cart-variant-type').val($(this).val());
-    });
+    if (product_variants.length > 0) {
+      $('#product-variants-container').append(product_variants);
+      var r_buttons = $('#product-variants input[type=radio]');
+      $('#cart_wrapper').append('<input id="cart-variant-type" type="hidden" name="' + r_buttons[0].name + '" value="' + r_buttons[0].value + '" />');
+      r_buttons[0].checked = 'checked';
+      r_buttons.click(function(e) {
+        $('#cart-variant-type').val($(this).val());
+      });
+    }
   });
 </script>
 

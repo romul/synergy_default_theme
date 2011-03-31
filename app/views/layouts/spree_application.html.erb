@@ -3,7 +3,7 @@
 <head>
   <%= hook :inside_head do %>
     <%= render 'shared/head' %>
-    <%= javascript_include_tag 'startup_script' %>
+    <%= render 'shared/synergy_startup_javascript' %>
   <% end %>
   <%= stylesheet_link_tag 'style' %>
 </head>

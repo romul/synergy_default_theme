@@ -1,0 +1,43 @@
+<%= javascript_include_tag 'jquery.tools.min' %>
+
+<script type="text/javascript">
+  $(function() {
+    var cp_wrapper = $('#comparable_products_wrapper').detach();
+    $('#tooltip_content').append(cp_wrapper);
+
+    jtooltip = $('#compare_products').tooltip({
+      position: 'bottom center',
+      events: { def: 'none,none' },
+      delay: 2000
+    }).data('tooltip');
+
+    $('#compare_products').click(function(e) {
+      if (jtooltip.isShown()) {
+        hideComparePopup();
+      }
+      else {
+        showComparePopup();
+      }
+      e.preventDefault();
+    });
+
+    $("#compare_products").html("<%= t(:compare_products, :scope => :compare_products, :count => @comparable_products.count) %>");
+  });
+
+  function showComparePopup() {
+    jtooltip.show();
+    $("#compare_products").addClass('shown');
+  }
+
+  function hideComparePopup() {
+    jtooltip.hide();
+    $("#compare_products").removeClass('shown');
+  }
+
+  function onAddCompareProduct() {
+    showComparePopup();
+  }
+  function onRemoveCompareProduct() {
+    showComparePopup();
+  }
+</script>

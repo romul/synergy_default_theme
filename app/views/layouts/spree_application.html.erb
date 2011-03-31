@@ -91,11 +91,9 @@
           <tr>
             <td align="right" valign="middle">
               <ul class="footer_menu">
-                <li><a href="#">Партнерство</a></li>
-                <li><a href="#">О компании</a></li>
-                <li><a href="#">Реквизиты</a></li>
-                <li><a href="#">Обратная связь</a></li>
-                <li><a href="#">Помощь</a></li>
+                <% for page in Page.footer_links do %>
+                  <li><%= link_to page.title, page.link %></li>
+                <% end %>
               </ul>
             </td>
           </tr>

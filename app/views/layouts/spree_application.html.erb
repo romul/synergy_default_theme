@@ -19,89 +19,72 @@
 
 <body class="<%= @body_class %>" id="<%= @body_id %>">
 
-<table class="table_wrapper">
-  <tr>
-    <td class="main_cell">
-      <div style="height: 4px; font-size: 0"></div>
-      <div class="main_top" align="center">
-        <div class="header_panel">
-          <table style="width: 100%; height: 100%">
-            <tr>
-              <td align="center" style="width: 220px; padding-left: 30px;">
-                <%= link_to image_tag("logo.png", :alt => "Synergy logo"), root_url %>
-              </td>
-              <td align="center" style="width: 400px">
-                <%= render 'shared/search' %>
-              </td>
-              <td align="center">
-                <% if store_menu? and not current_page?(cart_path) %>
-                  <div><%= link_to_cart %></div>
-                <% end %>
-              </td>
-              <td align="center">
-                <% if @comparable_products %>
-                  <div><%= link_to "Сравнение товаров (#{@comparable_products.count})", compare_products_path, {:id => "compare_products"} %></div>
-                  <div id="tooltip" class="tooltip" style="display: none">
-                    <div class="tooltip_top"></div>
-                    <div class="tooltip_middle">
-                      <div style="font-size: 0px">&nbsp;</div>
-                      <div class="tooltip_content" id="tooltip_content"></div>
-                      <div style="font-size: 0px">&nbsp;</div>
-                    </div>
-                    <div class="tooltip_bottom"></div>
-                  </div>
-                <% end %>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div align="center">
-        <div class="wrapper">
-          <div align="left" style="margin-top: 1em">
-            <%= hook :shared_login_bar %>
-          </div>
-          <div>
-            <% if content_for?(:sidebar) %>
-              <div class="sidebar">
-                <%= hook :sidebar do %>
-                  <%= yield :sidebar %>
-                <% end %>
+<div class="wrapper">
+  <div style="height: 4px; font-size: 0"></div>
+  <div class="main_top" align="center">
+    <div class="header_panel">
+      <ul>
+        <li style="text-align: center">
+          <div><%= link_to image_tag("logo.png", :alt => "Synergy logo"), root_url %></div></li>
+        <li style="padding-left: 16px"><%= render 'shared/search' %></li>
+        <li>
+          <% if store_menu? and not current_page?(cart_path) %>
+            <div><%= link_to_cart %></div>
+          <% end %>
+        </li>
+        <li>
+          <% if @comparable_products %>
+            <div><%= link_to "Сравнение товаров (#{@comparable_products.count})", compare_products_path, {:id => "compare_products"} %></div>
+            <div id="tooltip" class="tooltip" style="display: none">
+              <div class="tooltip_top"></div>
+              <div class="tooltip_middle">
+                <div style="font-size: 0px">&nbsp;</div>
+                <div class="tooltip_content" id="tooltip_content"></div>
+                <div style="font-size: 0px">&nbsp;</div>
               </div>
-            <% end %>
-            <div id="content" class="content">
-              <% if flash.notice %>
-                <div class="flash notice"><%= flash.notice %></div>
-              <% end %>
-              <% if flash[:errors] %>
-                <div class="flash errors"><%= flash[:error] %></div>
-              <% end %>
-              <%= yield %>
+              <div class="tooltip_bottom"></div>
             </div>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div align="center">
+    <div class="fixed_width">
+      <div align="left" style="margin-top: 1em">
+        <%= hook :shared_login_bar %>
+      </div>
+      <div>
+        <% if content_for?(:sidebar) %>
+          <div class="sidebar">
+            <%= hook :sidebar do %>
+              <%= yield :sidebar %>
+            <% end %>
           </div>
-          <div style="height: 10px;"></div>
+        <% end %>
+        <div id="content" class="content">
+          <% if flash.notice %>
+            <div class="flash notice"><%= flash.notice %></div>
+          <% end %>
+          <% if flash[:errors] %>
+            <div class="flash errors"><%= flash[:error] %></div>
+          <% end %>
+          <%= yield %>
         </div>
       </div>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" style="height: 124px">
-      <div class="footer" align="center">
-        <table style="" class="footer_table">
-          <tr>
-            <td align="right" valign="middle">
-              <ul class="footer_menu">
-                <% for page in Page.footer_links do %>
-                  <li><%= link_to page.title, page.link %></li>
-                <% end %>
-              </ul>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </td>
-  </tr>
-</table>
+      <div style="height: 10px;"></div>
+    </div>
+  </div>
+  <div class="footer_fake"></div>
+</div>
+
+<div class="footer" align="center">
+  <ul class="footer_menu">
+    <% for page in Page.footer_links do %>
+      <li><%= link_to page.title, page.link %></li>
+    <% end %>
+  </ul>
+</div>
 
 <%= render 'shared/google_analytics' %>
 

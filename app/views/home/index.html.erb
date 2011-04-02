@@ -3,7 +3,7 @@
 <% end %>
 
 <% @taxons.each do |taxon| %>
-  <div class="taxon_preview">
+  <div class="taxon">
     <h2><%= taxon.name %></h2>
 
     <%= render :partial => "shared/products", :locals => {:products => taxon_preview(taxon, 6), :taxon => taxon} %>

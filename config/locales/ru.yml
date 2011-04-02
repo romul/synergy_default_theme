@@ -1,0 +1,6 @@
+ru:
+  number:
+    # Used in number_to_currency()
+    currency:
+      format:
+        precision: 0

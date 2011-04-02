@@ -54,23 +54,21 @@
       <div align="left" style="margin-top: 1em">
         <%= hook :shared_login_bar %>
       </div>
-      <div>
-        <% if content_for?(:sidebar) %>
-          <div class="sidebar">
-            <%= hook :sidebar do %>
-              <%= yield :sidebar %>
-            <% end %>
-          </div>
-        <% end %>
-        <div id="content" class="content">
-          <% if flash.notice %>
-            <div class="flash notice"><%= flash.notice %></div>
+      <% if content_for?(:sidebar) %>
+        <div class="sidebar">
+          <%= hook :sidebar do %>
+            <%= yield :sidebar %>
           <% end %>
-          <% if flash[:errors] %>
-            <div class="flash errors"><%= flash[:error] %></div>
-          <% end %>
-          <%= yield %>
         </div>
+      <% end %>
+      <div id="content" class="content">
+        <% if flash.notice %>
+          <div class="flash notice"><%= flash.notice %></div>
+        <% end %>
+        <% if flash[:errors] %>
+          <div class="flash errors"><%= flash[:error] %></div>
+        <% end %>
+        <%= yield %>
       </div>
       <div style="height: 10px;"></div>
     </div>

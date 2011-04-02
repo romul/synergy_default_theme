@@ -4,7 +4,7 @@ body.one-col .content {
 }
 
 body.two-col .content {
-  margin-left: 260px;
+  margin-left: 20px;
 }
 
 p img {
@@ -112,7 +112,8 @@ h1, h2, h3, h4, h5, h6 {
   float: left;
   width: 250px;
   text-align: left;
-}
+  padding-top: 3em;
+} 
 
 .sidebar ul {
   margin: 1em 0.5em;
@@ -134,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .content {
   text-align: left;
-  padding-top: 1em;
+  padding-top: 3em;
 }
 
 .content h3 {
@@ -212,18 +213,18 @@ ul.footer_menu li a {
   color: white;
 }
 
-.nav-list ul {
+ul.nav-list {
   list-style: none;
-  margin: 0.2em 0.5em;
+  margin: 0.2em 0.5em 3em;
 }
 
-.nav-list ul li {
+ul.nav-list li {
   font-size: 10pt;
   margin: 0.4em 0;
   line-height: 1em;
 }
 
-.nav-list ul li.current a {
+ul.nav-list li.current a {
   font-weight: bold;
 }
 
@@ -241,19 +242,37 @@ ul.footer_menu li a {
   vertical-align: bottom;
 }
 
-.section_header h1 {
+h1 {
+  line-height: 0.85em;
+  font-size: 16pt;
+  margin-bottom: 1em;
+  color: #555;
+  padding-bottom: 0.5em;
+  padding-left: 5px;
+  border-bottom: 1px solid gray;
+}
+
+h2 {
   line-height: 0.85em;
   font-size: 16pt;
   margin-bottom: 1em;
   color: gray;
 }
 
-.section_header h1 a {
+.sidebar h2, div.taxon h2 {
+  padding-bottom: 0.5em;
+  padding-left: 5px;
+  border-bottom: 1px solid gray;
+}
+
+div.taxon { clear: both; }
+
+h2 a {
   color: gray;
   text-decoration: none;
 }
 
-.section_header h1 a:hover {
+h2 a:hover {
   color: gray;
   text-decoration: underline;
 }
@@ -362,9 +381,7 @@ button, a.button, input.button {
 }
 
 body.two-col #content {
-  display: block;
-  float: none;
-  width: auto;
+  float: left;
 }
 
 #product_description_menu {
@@ -374,10 +391,6 @@ body.two-col #content {
 #cart_wrapper .prices {
   text-align: right;
   margin-bottom: .4em;
-}
-
-.content h2 {
-  font-size: 14pt;
 }
 
 .product-listing {

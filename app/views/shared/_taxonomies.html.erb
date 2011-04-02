@@ -1,23 +1,14 @@
 <div id="taxonomies" class="sidebar-item">
-  <ul class="nav-list">
-    <% get_taxonomies.each do |taxonomy| %>
-        <table class="section_header<%= " current" if @taxon && @taxon == taxonomy.root %>">
-          <tr>
-            <td>
-              <h1>
-                <%= link_to taxonomy.name, seo_url(taxonomy.root), :class => 'root' %>
-              </h1>
-            </td>
-          </tr>
-        </table>
-
-        <ul>
-          <% taxonomy.root.children.each do |taxon| %>
-              <li<%== ' class="current"' if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>
-                <%= link_to taxon.name, seo_url(taxon) %>
-              </li>
-          <% end %>
-        </ul>
-    <% end %>
-  </ul>
+  <% get_taxonomies.each do |taxonomy| %>
+    <h2<%== ' class="current"' if @taxon && @taxon == taxonomy.root %>>
+      <%= link_to taxonomy.name, seo_url(taxonomy.root), :class => 'root' %>
+    </h2>
+    <ul class="nav-list">
+      <% taxonomy.root.children.each do |taxon| %>
+        <li<%== ' class="current"' if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>
+          <%= link_to taxon.name, seo_url(taxon) %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

@@ -542,3 +542,7 @@ hr.space {
   height: 15px;
   width: 85px;
 }
+
+#reviews div.review {
+  border-bottom: none;
+}

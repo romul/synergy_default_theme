@@ -537,3 +537,8 @@ hr.space {
 .pagination {
   clear: both;
 }
+
+.product-listing .rating-stars-container {
+  height: 15px;
+  width: 85px;
+}

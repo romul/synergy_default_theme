@@ -582,3 +582,7 @@ hr.space {
 .review .title, .review .feedback_review {
   display: none;
 }
+
+.rating-stars-container {
+  display: inline-block;
+}

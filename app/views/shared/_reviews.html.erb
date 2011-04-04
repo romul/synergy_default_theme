@@ -1,17 +1,3 @@
-<script type="text/javascript">
-  function show_add_review_container() {
-    $('#add_review_container').slideDown();
-  }
-
-  $(function() {
-    $('#add_review_link').click(function(e) {
-      show_add_review_container();
-      $(this).slideUp();
-      e.preventDefault();
-    });
-  });
-</script>
-
 <div id="reviews">
   <a name="reviews_anc"></a>
   <h3><%= t('review_header') %></h3>

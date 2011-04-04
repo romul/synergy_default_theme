@@ -578,3 +578,7 @@ hr.space {
 .review_fine_print {
   clear: both;
 }
+
+.review .title, .review .feedback_review {
+  display: none;
+}

@@ -22,7 +22,17 @@
         $('#cart-variant-type').val($(this).val());
       });
     }
+
+    $('#add_review_link').click(function(e) {
+      show_add_review_container();
+      $(this).slideUp();
+      e.preventDefault();
+    });
   });
+
+  function show_add_review_container() {
+    $('#add_review_container').slideDown();
+  }
 </script>
 
 <% @body_id = 'product-details' %>

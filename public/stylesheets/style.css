@@ -574,3 +574,7 @@ hr.space {
 #new_review .star-rating-control {
   margin-top: 1em;
 }
+
+.review_fine_print {
+  clear: both;
+}

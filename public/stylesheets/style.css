@@ -546,3 +546,31 @@ hr.space {
 #reviews div.review {
   border-bottom: none;
 }
+
+#new_review .review_title_field {
+  display: none;
+}
+
+#new_review .review_rating_field {
+  float: right;
+  width: 180px;
+}
+
+#new_review .review_review_field {
+  margin-right: 200px;
+}
+
+#new_review .review_review_field textarea {
+  margin-top: 1em;
+  width: 100%;
+}
+
+#new_review .review_submit {
+  clear: right;
+  float: right;
+  width: 190px;
+}
+
+#new_review .star-rating-control {
+  margin-top: 1em;
+}

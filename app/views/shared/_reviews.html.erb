@@ -24,7 +24,7 @@
     <%= render 'reviews/form', { :product => @product, :review => Review.new } %>
   </div>
 
-  <hr style="size: 1px; background: silver; border: none" />
+  <hr class="review_hr" style="" />
 
   <a name="reviews_list"></a>
   <% for review in @product.reviews.approval_filter %>

@@ -1,0 +1,10 @@
+<div class="review">
+  <span title="<%# txt_stars(review.rating) %>">
+    <%= render :partial => "reviews/stars", :locals => {:stars => review.rating} %>
+  </span>
+  <br/>
+  <span class="attribution"><%= t('submitted_on') %> <strong><%= l(review.created_at.to_date) %></strong></span>
+  <p>
+  <%= review.review %>
+  </p>
+</div>

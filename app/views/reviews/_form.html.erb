@@ -1,0 +1,33 @@
+<%= form_for review, :url => product_reviews_path(product), :html => { :method => :post } do |f| %>
+  <%= render "shared/error_messages", :target => review %>
+  <%= f.hidden_field :product_id, :value => product.id %>
+  <%= f.hidden_field :title, :value => '-' %>
+
+  <table cellspacing="0" cellpadding="2">
+    <tbody>
+    <tr valign="top">
+      <td class="fieldtitle right nowrap">
+        <%= f.label :review, raw("<strong>#{ I18n.t('review_content')}</strong>") %>
+      </td>
+      <td style="padding-top: 5px; padding-bottom: 5px; width: 110px" class="fieldtitle right nowrap">
+        <strong><%= I18n.t('rating') %></strong>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td style="padding-right: 20px">
+        <%= f.text_area :review, :wrap => "virtual", :rows => "6", :cols => "50", :style => 'width: 100%;' %>
+      </td>
+      <td style="padding-top: 5px; padding-bottom: 5px; vertical-align: top">
+        <%= render :partial => "reviews/stars", :locals => {:stars => review.rating, :edit_enabled => true} %>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td style="padding-top: 5px;">
+        <%= f.submit I18n.t('submit_your_review'), :class => "button bg_darkfirst".html_safe %>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+<% end %>

@@ -1,0 +1,34 @@
+<script type="text/javascript">
+  function show_add_review_container() {
+    $('#add_review_container').slideDown();
+  }
+
+  $(function() {
+    $('#add_review_link').click(function(e) {
+      show_add_review_container();
+      $(this).slideUp();
+      e.preventDefault();
+    });
+  });
+</script>
+
+<div id="reviews">
+  <a name="reviews_anc"></a>
+  <h3><%= t('review_header') %></h3>
+
+  <div style="margin-bottom: 2em">
+    <a id="add_review_link" href="#">Добавить отзыв</a>
+  </div>
+
+  <div id="add_review_container" style="display: none">
+    <%= render 'reviews/form', { :product => @product, :review => Review.new } %>
+  </div>
+
+  <hr style="size: 1px; background: silver; border: none" />
+
+  <a name="reviews_list"></a>
+  <% for review in @product.reviews.approval_filter %>
+    <%= render :partial => 'shared/review', :locals => {:review => review} %>
+  <% end %>
+</div>
+

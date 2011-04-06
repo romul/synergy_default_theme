@@ -75,7 +75,7 @@
     </div>
 
     <div id="product_like_buttons">
-      <%= image_tag 'facebook_like.png' %> <%= image_tag 'vkontakte_like.png' %> <%= image_tag 'tweet_like.png' %>
+    <!--  <%= image_tag 'facebook_like.png' %> <%= image_tag 'vkontakte_like.png' %> <%= image_tag 'tweet_like.png' %> -->
     </div>
 
     <h2>Описание:</h2>
@@ -89,42 +89,27 @@
   </div>
 </div>
 
+<% if defined?(RecentlyViewedConfiguration) && get_recently_viewed_products.any? %>
 <div>
-  <h3>Похожие товары:</h3>
+  <h3>Вы недавно смотрели:</h3>
 
   <ul class="similar_product_list">
+  <% get_recently_viewed_products.each do |p| %>
+    <% next if p.id == @product.id %>
     <li>
       <div class="similar_product_image_container">
-        <img src="/assets/products/87/small/i.jpg">
+        <%= small_image(p) %>
       </div>
       <div>
-        <div><a href="#">Lenovo IdeaCentre B305</a></div>
-        <div><%= image_tag('star_orange.png') * 5 %></div>
-        <div class="similar_product_price">195 000 руб.</div>
+        <div><%= link_to p.name, p %></div>
+        <div><%= render 'shared/rating', :product => p %></div>
+        <div class="similar_product_price"><%= product_price(p) %></div>
       </div>
     </li>
-    <li>
-      <div class="similar_product_image_container">
-        <img src="/assets/products/87/small/i.jpg">
-      </div>
-      <div>
-        <div><a href="#">Lenovo IdeaCentre B305</a></div>
-        <div><%= image_tag('star_orange.png') * 5 %></div>
-        <div class="similar_product_price">195 000 руб.</div>
-      </div>
-    </li>
-    <li>
-      <div class="similar_product_image_container">
-        <img src="/assets/products/87/small/i.jpg">
-      </div>
-      <div>
-        <div><a href="#">Lenovo IdeaCentre B305</a></div>
-        <div><%= image_tag('star_orange.png') * 5 %></div>
-        <div class="similar_product_price">195 000 руб.</div>
-      </div>
-    </li>
+  <% end %>
   </ul>
 </div>
+<% end %>
 
 <%= render 'taxons' %>
 <%= render 'shared/reviews' %>

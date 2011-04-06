@@ -1,11 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<% cache 'head', :expires_in => SHORT_INTERVAL do %>
   <%= hook :inside_head do %>
     <%= render 'shared/head' %>
     <%= render 'shared/synergy_startup_javascript' %>
   <% end %>
   <%= stylesheet_link_tag 'style' %>
+<% end %>  
 </head>
 <%
    if @body_class.nil?
@@ -77,14 +79,16 @@
 </div>
 
 <div class="footer" align="center">
+<% cache 'footer_menu' do %>
   <ul class="footer_menu">
     <% for page in Page.footer_links do %>
       <li><%= link_to page.title, page.link %></li>
     <% end %>
   </ul>
+<% end %>
 </div>
-
-<%= render 'shared/google_analytics' %>
-
+<% cache 'google_analytics' do %>
+  <%= render 'shared/google_analytics' %>
+<% end %>
 </body>
 </html>

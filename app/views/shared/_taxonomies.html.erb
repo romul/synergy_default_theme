@@ -1,3 +1,4 @@
+<% cache ['taxonomies', @taxon], :expires_in => SHORT_INTERVAL do %>
 <div id="taxonomies" class="sidebar-item">
   <% get_taxonomies.each do |taxonomy| %>
     <h2<%== ' class="current"' if @taxon && @taxon == taxonomy.root %>>
@@ -12,3 +13,4 @@
     </ul>
   <% end %>
 </div>
+<% end %>

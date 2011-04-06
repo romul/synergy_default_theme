@@ -18,6 +18,10 @@ module SynergyDefaultTheme
         Spree::RecentlyViewed::Config.set :recently_viewed_products_max_count => 3
       end
       
+      if Spree::Config.instance
+        Spree::Config.set :products_per_page => 9
+      end
+      
       Image.attachment_definitions[:attachment].merge!({
         :styles => {
                 :mini    => '40x40>',

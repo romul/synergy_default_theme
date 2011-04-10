@@ -1,7 +1,6 @@
 <% content_for :sidebar do %>
   <%= hook :taxon_sidebar_navigation do %>
     <%= render :partial => "shared/taxonomies" %>
-    <%# render(:partial => "shared/filters") if @taxon.children.empty? %>
   <% end %>
 <% end %>
 
@@ -37,6 +36,7 @@
 
 <% @body_id = 'product-details' %>
 
+<h1><%= @product.name %></h1>
 <div id="product-show">
   <div id="product-images">
     <%= hook :product_images do %>
@@ -53,8 +53,6 @@
   </div>
 
   <div id="product-description">
-    <h1><%= @product.name %></h1>
-
     <%= hook :cart_form do %>
       <div id="cart-form">
         <%= render 'cart_form' %>

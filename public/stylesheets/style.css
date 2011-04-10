@@ -277,10 +277,6 @@ h2 a:hover {
   text-decoration: underline;
 }
 
-#product-show {
-  padding-top: 24px;
-}
-
 #main-image {
   min-height: 200px !important;
 }
@@ -319,10 +315,6 @@ h2 a:hover {
 
 #main-image {
   margin-bottom: 1em;
-}
-
-#product-description h1 {
-  font-size: 24pt;
 }
 
 #product-description h2 {

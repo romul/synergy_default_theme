@@ -54,6 +54,7 @@
       <div align="left" style="margin-top: 1em">
         <%= hook :shared_login_bar %>
       </div>
+      <%= render :partial => 'shared/comparable_products' %>
       <% if content_for?(:sidebar) %>
         <div class="sidebar">
           <%= hook :sidebar do %>

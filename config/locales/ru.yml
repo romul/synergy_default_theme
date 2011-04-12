@@ -4,3 +4,6 @@ ru:
     currency:
       format:
         precision: 0
+  shipping_method: Способ доставки
+  order_processed_successfully: Ваш заказ был успешно оформлен
+  new_customer: Регистрация в магазине

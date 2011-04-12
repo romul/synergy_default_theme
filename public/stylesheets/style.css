@@ -60,18 +60,22 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 10px;
 }
 
-.header_panel ul {
+.header_panel > ul {
   margin: 0;
   padding: 0;
   list-style: none;
   display: table-row;
 }
 
-.header_panel ul li {
+.header_panel > ul > li {
   height: 102px;
   vertical-align: middle;
   text-align: left;
   display: table-cell;
+}
+
+#comparable_products {
+  margin-bottom: 1.5em;
 }
 
 .header_panel #keywords_submit {
@@ -113,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 250px;
   text-align: left;
   padding-top: 3em;
-} 
+}
 
 .sidebar ul {
   margin: 1em 0.5em;
@@ -184,7 +188,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer_fake {
   height: 150px;
-  clear:both;
+  clear: both;
 }
 
 .footer {
@@ -265,7 +269,9 @@ h2 {
   border-bottom: 1px solid gray;
 }
 
-div.taxon { clear: both; }
+div.taxon {
+  clear: both;
+}
 
 h2 a {
   color: gray;
@@ -315,6 +321,15 @@ h2 a:hover {
 
 #main-image {
   margin-bottom: 1em;
+  height: 210px;
+  width: 200px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#main-image img {
+  position: static !important;
 }
 
 #product-description h2 {
@@ -400,17 +415,11 @@ body.two-col #content {
 
 .product-listing .product-image-wrapper {
   margin: 10px 0;
-  position: relative;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
   height: 120px;
-}
-
-.product-listing .product-image-wrapper img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
+  width: 230px;
 }
 
 .product-listing li a.info {
@@ -446,7 +455,13 @@ ul.thumbnails li {
 ul.thumbnails li a {
   height: 42px;
   width: 42px;
-  display: block;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+ul.thumbnails li a img {
+  position: static;
 }
 
 #cart_wrapper {
@@ -480,18 +495,15 @@ ul.thumbnails li a {
 
 .similar_product_image_container {
   float: left;
-  position: relative;
   width: 120px;
   height: 120px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .similar_product_image_container img {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  margin: auto;
+  position: static;
 }
 
 .similar_product_price {

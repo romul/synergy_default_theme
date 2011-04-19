@@ -7,3 +7,6 @@ ru:
   shipping_method: Способ доставки
   order_processed_successfully: Ваш заказ был успешно оформлен
   new_customer: Регистрация в магазине
+  add_to_cart: В корзину
+  compare_products:
+    сomparable_products: "Список товаров:"

@@ -51,6 +51,10 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
+.header_panel #keywords:focus {
+  background: url("../images/search_textinput_active.png") no-repeat;
+}
+
 .header_panel #keywords {
   width: 250px;
   height: 22px;
@@ -74,8 +78,44 @@ h1, h2, h3, h4, h5, h6 {
   display: table-cell;
 }
 
+#comparable_products_wrapper h3 {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
 #comparable_products {
-  margin-bottom: 1.5em;
+  margin: 0 0 1.5em 0;
+  list-style: none;
+}
+
+#comparable_products a {
+  color: #369;
+}
+
+#comparable_products a:hover {
+  text-decoration: underline;
+  color: #48a;
+}
+
+#compare_products_link {
+  text-align: center;
+}
+
+#compare_products_link a {
+  text-transform: none;
+}
+
+#clear_comparable_products_link {
+  display: none;
+}
+
+.remove-comparable-item {
+  float: right;
+  display: block;
+  width: 13px;
+  height: 13px;
+  background: url("../images/remove_comparable.png") no-repeat;
+  margin-top: 3px;
 }
 
 .header_panel #keywords_submit {
@@ -465,6 +505,7 @@ ul.thumbnails li a img {
 }
 
 #cart_wrapper {
+  text-align: center;
   float: right;
 }
 
@@ -473,11 +514,17 @@ ul.thumbnails li a img {
   color: black;
 }
 
-.red-button {
-  background: url("../images/red_button_bg.png") repeat-x left center red !important;
-  color: white;
+.add-to-cart {
+  background: #e9ebee;
+  color: black;
   font-size: 10pt !important;
   border-radius: 12px;
+  box-shadow: inset 0 -5px 5px #e9ebee;
+  text-transform: none;
+}
+
+.add-to-cart:hover {
+  box-shadow: inset 0 -5px 5px white;
 }
 
 .similar_product_list {
@@ -589,4 +636,12 @@ hr.space {
 
 .rating-stars-container {
   display: inline-block;
+}
+
+div.star-rating, div.star-rating a {
+  background: url('/images/star.png') no-repeat;
+}
+
+div.star-rating-hover a {
+  background-position: 0 -16px;
 }

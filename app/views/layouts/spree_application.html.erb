@@ -24,9 +24,9 @@
   <div class="main_top" align="center">
     <div class="header_panel">
       <ul>
-        <li style="text-align: center">
+        <li style="text-align: center; width: 265px">
           <div><%= link_to image_tag("logo.png", :alt => "Synergy logo"), root_url %></div></li>
-        <li style="padding-left: 16px"><%= render 'shared/search' %></li>
+        <li style="padding-left: 16px; width: 400px"><%= render 'shared/search' %></li>
         <li>
           <% if store_menu? and not current_page?(cart_path) %>
             <div><%= link_to_cart %></div>

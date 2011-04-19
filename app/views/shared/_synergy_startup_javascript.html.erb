@@ -22,6 +22,8 @@
     });
 
     $("#compare_products").html("<%= t(:compare_products, :scope => :compare_products, :count => @comparable_products.count) %>");
+
+    $("#compare_products_link a").addClass('button');
   });
 
   function showComparePopup() {

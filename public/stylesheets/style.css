@@ -45,6 +45,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 1058px;
   height: 102px;
   display: table;
+  margin-top: 4px;
 }
 
 .header_panel #taxon {

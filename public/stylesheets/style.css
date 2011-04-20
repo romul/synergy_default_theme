@@ -645,3 +645,18 @@ div.star-rating, div.star-rating a {
 div.star-rating-hover a {
   background-position: 0 -16px;
 }
+
+.simple_overlay {
+  padding: 10px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  box-shadow: gray 0 10px 10px;
+  background: white;
+  z-index: 100;
+}
+
+#login_overlay input[type=text], #login_overlay input[type=password] {
+  border: 1px solid silver;
+  border-radius: 12px;
+  padding: 2px 6px;
+}

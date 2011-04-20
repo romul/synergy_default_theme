@@ -24,7 +24,12 @@
     $("#compare_products").html("<%= t(:compare_products, :scope => :compare_products, :count => @comparable_products.count) %>");
 
     $("#compare_products_link a").addClass('button');
-    $("#log_in_link").overlay();
+    $("#log_in_link").overlay({
+      mask: {
+        color: 'black',
+        opacity: 0.3
+      }
+    });
   });
 
   function showComparePopup() {

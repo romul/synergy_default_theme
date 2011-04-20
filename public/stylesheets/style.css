@@ -660,3 +660,13 @@ div.star-rating-hover a {
   border-radius: 12px;
   padding: 2px 6px;
 }
+
+.simple_overlay .close {
+	background-image: url(/images/close_button.png);
+	position:absolute;
+	right:-9px;
+	top:-9px;
+	cursor:pointer;
+	height:18px;
+	width:18px;
+}

@@ -479,7 +479,7 @@ body.two-col #content {
 
 .product-listing li a.info .price {
   font-size: 16pt;
-  font-weight: bold;
+  font-weight: normal;
   color: black;
 }
 

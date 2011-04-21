@@ -651,7 +651,7 @@ div.star-rating-hover a {
   padding: 10px;
   border: 1px solid silver;
   border-radius: 5px;
-  box-shadow: gray 0 10px 10px;
+  box-shadow: rgba(0,0,0,.5) 0 10px 10px;
   background: white;
   z-index: 100;
 }

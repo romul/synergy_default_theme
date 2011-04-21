@@ -1,4 +1,6 @@
 <% unless @product_properties.empty? %>
+  <h2>Характеристики:</h2>
+
   <table id="product-properties" class="table-display">
     <% for product_property in @product_properties %>
       <tr class="property-row <%= cycle 'odd', 'even' %>">

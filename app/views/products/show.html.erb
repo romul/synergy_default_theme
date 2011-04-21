@@ -78,11 +78,11 @@
     <!--  <%= image_tag 'facebook_like.png' %> <%= image_tag 'vkontakte_like.png' %> <%= image_tag 'tweet_like.png' %> -->
     </div>
 
-    <h2>Описание:</h2>
     <%= hook :product_description do %>
+      <h2>Описание:</h2>
       <%= product_description(@product) rescue t("product_has_no_description") %>
     <% end %>
-    <h2>Характеристики:</h2>
+
     <%= hook :product_properties do %>
       <%= render 'properties' %>
     <% end %>

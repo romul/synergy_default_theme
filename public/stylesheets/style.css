@@ -581,7 +581,7 @@ hr.space {
 
 #subtotal h3 {
   margin: 0 0 1em;
-  font-size: 16pt;
+  font-size: 14pt;
   color: black;
   text-align: right;
 }
@@ -670,4 +670,13 @@ div.star-rating-hover a {
 	cursor:pointer;
 	height:18px;
 	width:18px;
+}
+
+#applying_coupon h3 {
+  margin-top: 0;
+}
+
+#cart-detail th, #cart-detail td {
+  padding-top: 0;
+  padding-bottom: 0;
 }

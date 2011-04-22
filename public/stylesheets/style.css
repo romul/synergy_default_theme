@@ -680,3 +680,7 @@ div.star-rating-hover a {
   padding-top: 0;
   padding-bottom: 0;
 }
+
+div#checkout #checkout_form_address #shipping .select_address input {
+  width: auto;
+}

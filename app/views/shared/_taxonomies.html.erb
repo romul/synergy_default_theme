@@ -1,6 +1,6 @@
 <% cache ['taxonomies', @taxon], :expires_in => SHORT_INTERVAL do %>
 <div id="taxonomies" class="sidebar-item">
-  <% get_taxonomies.each do |taxonomy| %>
+  <% get_taxonomies.select{|t| !t.show_on_homepage? }.each do |taxonomy| %>
     <h2<%== ' class="current"' if @taxon && @taxon == taxonomy.root %>>
       <%= link_to taxonomy.name, seo_url(taxonomy.root), :class => 'root' %>
     </h2>

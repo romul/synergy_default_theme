@@ -4,6 +4,21 @@
 <% else %>
   Добро пожаловать, <%= link_to t('log_in'), login_path, {:id => 'log_in_link', :rel => '#login_overlay'} %>.
   <div class="simple_overlay" id="login_overlay" style="display: none">
-    <%= render :partial => "shared/login" %>
+    <div class="login_social_bar">
+      <div style="margin: 6px 0">Войти в магазин с помощью:</div>
+      <div style="margin: 6px 0">
+        <%= image_tag 'twitter_32.png' %>
+        <%= image_tag 'vkontakte_32.png' %>
+        <%= image_tag 'facebook_32.png' %>
+        <%= image_tag 'google_32.png' %>
+      </div>
+    </div>
+    <div class="login_link_bar">
+      <div style="padding: 6px 0"><%= link_to t("create_a_new_account"), signup_path %></div>
+      <div style="padding: 6px 0"><%= link_to t("forgot_password"), new_user_password_path %></div>
+    </div>
+    <div class="login_form_bar">
+      <%= render :partial => "shared/login" %>
+    </div>
   </div>
 <% end %>

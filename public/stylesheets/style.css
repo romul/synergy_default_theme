@@ -651,8 +651,8 @@ div.star-rating-hover a {
   padding: 10px;
   border: 1px solid silver;
   border-radius: 5px;
-  box-shadow: rgba(0,0,0,.5) 0 10px 10px;
-  background: white;
+  box-shadow: rgba(0, 0, 0, .5) 0 10px 10px;
+  background: url("/images/login_bar_bg.png") repeat-x #e5e5e5;
   z-index: 100;
 }
 
@@ -662,14 +662,39 @@ div.star-rating-hover a {
   padding: 2px 6px;
 }
 
+#login_overlay label {
+  margin-bottom: 1em;
+}
+
 .simple_overlay .close {
-	background-image: url(/images/close_button.png);
-	position:absolute;
-	right:-9px;
-	top:-9px;
-	cursor:pointer;
-	height:18px;
-	width:18px;
+  background-image: url("/images/close_button.png");
+  position: absolute;
+  right: -9px;
+  top: -9px;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+}
+
+.login_social_bar {
+  width: 220px;
+  height: 100px;
+  float: right;
+  padding: 0 14px;
+  border-bottom: 1px solid silver;
+}
+
+.login_link_bar {
+  width: 220px;
+  float: right;
+  clear: right;
+  padding: 10px 14px;
+}
+
+.login_form_bar {
+  margin-right: 250px;
+  padding: 6px 16px 2px 6px;
+  border-right: 1px solid silver;
 }
 
 #applying_coupon h3 {

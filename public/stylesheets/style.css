@@ -398,9 +398,9 @@ h2 a:hover {
 }
 
 button, a.button, input.button {
-  -moz-outline-radius: 7px 7px 7px 7px;
+  -moz-outline-radius: 14px;
   border-color: gray !important;
-  border-radius: 7px 7px 7px 7px;
+  border-radius: 14px;
   padding: 4px 17px;
 }
 
@@ -699,6 +699,10 @@ div.star-rating-hover a {
 
 .login_form_bar input#user_remember_me {
   vertical-align: middle;
+}
+
+.login_form_bar input[type=submit] {
+  font-weight: normal;
 }
 
 #applying_coupon h3 {

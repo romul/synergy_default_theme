@@ -717,3 +717,7 @@ div.star-rating-hover a {
 div#checkout #checkout_form_address #shipping .select_address input {
   width: auto;
 }
+
+#product-variants-container {
+  clear: both;
+}

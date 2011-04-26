@@ -6,7 +6,7 @@ Spree::BaseHelper.module_eval do
       text = "#{text}"
       css_class = 'empty'
     else
-      text = "#{text}: (#{current_order.item_count})"
+      text = "#{text} (#{current_order.item_count})"
       css_class = 'full'
     end
     link_to text, cart_path, :class => css_class

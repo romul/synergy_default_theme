@@ -451,11 +451,18 @@ body.two-col #content {
 
 .product-listing li {
   background: none;
-  border: none;
+  border: 1px solid white;
   margin: 0;
   padding: 0;
-  width: 230px;
+  width: 248px;
   height: 230px;
+  padding-top: 2em;
+}
+
+.product-listing li:hover {
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  /*box-shadow: silver 0 0 15px;*/
 }
 
 .product-listing .product-image-wrapper {
@@ -464,7 +471,7 @@ body.two-col #content {
   text-align: center;
   vertical-align: middle;
   height: 130px;
-  width: 230px;
+  width: 248px;
 }
 
 .product-listing li a.info {

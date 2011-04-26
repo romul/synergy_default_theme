@@ -599,6 +599,15 @@ hr.space {
   text-align: right;
 }
 
+#subtotal .links a {
+  width: 140px;
+  text-align: center;
+}
+
+#subtotal .links img {
+  display: none;
+}
+
 .pagination {
   clear: both;
 }

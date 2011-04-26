@@ -1,4 +1,4 @@
 Synergy Default Theme
 ===================
 
-Copyright (c) 2011 [name of extension creator], released under the New BSD License
+Copyright (c) 2011 "Сервис и Консалтинг", released under the New BSD License

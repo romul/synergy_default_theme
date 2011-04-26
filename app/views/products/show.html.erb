@@ -117,6 +117,16 @@
         $('#cart-form form').append(variants);
       }
     });
+
+    $('#product-variants select.option-type').bind("change", function(){
+      $("#product-variants select.option-type").map(function(i, select){
+        var selected_option = $(select).find("option:selected")[0];
+        $(select).find("option").each(function(i, option) {
+          if (option == selected_option) option.setAttribute('selected', 'selected');
+          else $(option).removeAttr('selected');
+        });
+      });
+    });
   });
   <% end %>
 </script>

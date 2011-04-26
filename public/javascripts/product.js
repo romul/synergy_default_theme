@@ -16,7 +16,3 @@ var add_image_handlers = function() {
     }
   );
 };
-
-$(function() {
-  variant_changed(default_variant_id);
-});

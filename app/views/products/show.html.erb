@@ -14,12 +14,6 @@
     var product_variants = $('#product-variants').detach();
     if (product_variants.length > 0) {
       $('#product-variants-container').append(product_variants);
-      var r_buttons = $('#product-variants input[type=radio]');
-      $('#cart_wrapper').append('<input id="cart-variant-type" type="hidden" name="' + r_buttons[0].name + '" value="' + r_buttons[0].value + '" />');
-      r_buttons[0].checked = 'checked';
-      r_buttons.click(function(e) {
-        $('#cart-variant-type').val($(this).val());
-      });
     }
 
     $('#add_review_link').click(function(e) {
@@ -75,7 +69,7 @@
     <div id="product_like_buttons">
       <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
       <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter"></div>
-    <!--  <%= image_tag 'facebook_like.png' %> <%= image_tag 'vkontakte_like.png' %> <%= image_tag 'tweet_like.png' %> -->
+      <!--  <%= image_tag 'facebook_like.png' %> <%= image_tag 'vkontakte_like.png' %> <%= image_tag 'tweet_like.png' %> -->
     </div>
 
     <%= hook :product_description do %>
@@ -90,26 +84,43 @@
 </div>
 
 <% if defined?(RecentlyViewedConfiguration) && get_recently_viewed_products.count > 1 %>
-<div style="clear: both">
-  <h3>Вы недавно смотрели:</h3>
+  <div style="clear: both">
+    <h3>Вы недавно смотрели:</h3>
 
-  <ul class="similar_product_list">
-  <% get_recently_viewed_products.each do |p| %>
-    <% next if p.id == @product.id %>
-    <li>
-      <div class="similar_product_image_container">
-        <%= small_image(p) %>
-      </div>
-      <div>
-        <div><%= link_to p.name, p %></div>
-        <div><%= render 'shared/rating', :product => p %></div>
-        <div class="similar_product_price"><%= product_price(p) %></div>
-      </div>
-    </li>
-  <% end %>
-  </ul>
-</div>
+    <ul class="similar_product_list">
+      <% get_recently_viewed_products.each do |p| %>
+        <% next if p.id == @product.id %>
+        <li>
+          <div class="similar_product_image_container">
+            <%= small_image(p) %>
+          </div>
+          <div>
+            <div><%= link_to p.name, p %></div>
+            <div><%= render 'shared/rating', :product => p %></div>
+            <div class="similar_product_price"><%= product_price(p) %></div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
+
+<script>
+  <% if @product.has_variants? %>
+  $(function() {
+    variant_changed(default_variant_id);
+
+    $('#cart-form form').bind('submit', function(e) {
+      if ($('#cart-form #product-variants').length == 0) {
+        var variants = $('#product-variants').clone();
+        variants.css('display', 'none');
+        $('#cart-form form').append(variants);
+      }
+    });
+  });
+  <% end %>
+</script>
+
 
 <%= render 'taxons' %>
 <%= render 'shared/reviews' %>

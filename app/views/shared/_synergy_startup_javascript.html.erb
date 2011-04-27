@@ -8,7 +8,7 @@
     jtooltip = $('#compare_products').tooltip({
       position: 'bottom center',
       events: { def: 'none,none' },
-      delay: 200000
+      delay: 3000
     }).data('tooltip');
 
     $('#compare_products').click(function(e) {
@@ -35,11 +35,13 @@
   function showComparePopup() {
     jtooltip.show();
     $("#compare_products").addClass('shown');
+    compare_popup_timer = window.setTimeout(hideComparePopup, 3000);
   }
 
   function hideComparePopup() {
     jtooltip.hide();
     $("#compare_products").removeClass('shown');
+    window.clearTimeout(compare_popup_timer);
   }
 
   function onAddCompareProduct() {

@@ -16,7 +16,7 @@ ru:
   compare_products:
     сomparable_products: "Список товаров:"
   subtotal: Стоимость товара
-  update: Обновить
+  recalculate: Пересчитать
   save_and_continue: Продолжить
   email: "Электронная почта"
   email_address: "Адрес электронной почты"

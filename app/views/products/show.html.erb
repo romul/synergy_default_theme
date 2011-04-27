@@ -11,10 +11,10 @@
       $('#add_review_link').slideUp();
     });
 
-    var product_variants = $('#product-variants').detach();
-    if (product_variants.length > 0) {
-      $('#product-variants-container').append(product_variants);
-    }
+    /*var product_variants = $('#product-variants').detach();
+     if (product_variants.length > 0) {
+     $('#product-variants-container').append(product_variants);
+     }*/
 
     $('#add_review_link').click(function(e) {
       show_add_review_container();
@@ -37,9 +37,7 @@
       <div id="main-image">
         <%= render 'image' %>
       </div>
-      <div id="thumbnails">
-        <%= render 'thumbnails', :product => @product %>
-      </div>
+
     <% end %>
 
     <div id="product-variants-container">
@@ -72,15 +70,27 @@
       <!--  <%= image_tag 'facebook_like.png' %> <%= image_tag 'vkontakte_like.png' %> <%= image_tag 'tweet_like.png' %> -->
     </div>
 
-    <%= hook :product_description do %>
-      <h2>Описание:</h2>
-      <%= product_description(@product) rescue t("product_has_no_description") %>
-    <% end %>
+    <div id="thumbnails">
+      <%= render 'thumbnails', :product => @product %>
+    </div>
 
-    <%= hook :product_properties do %>
-      <%= render 'properties' %>
-    <% end %>
   </div>
+</div>
+
+<div style="clear: both" id="product_description">
+  <%= hook :product_description do %>
+    <h3>Описание:</h3>
+
+    <div class="description-content">
+      <%= product_description(@product) rescue t("product_has_no_description") %>
+    </div>
+  <% end %>
+</div>
+
+<div style="clear: both" id="product_parameters">
+  <%= hook :product_properties do %>
+    <%= render 'properties' %>
+  <% end %>
 </div>
 
 <% if defined?(RecentlyViewedConfiguration) && get_recently_viewed_products.count > 1 %>
@@ -110,16 +120,16 @@
   $(function() {
     variant_changed(default_variant_id);
 
-    $('#cart-form form').bind('submit', function(e) {
-      if ($('#cart-form #product-variants').length == 0) {
-        var variants = $('#product-variants').clone();
-        variants.css('display', 'none');
-        $('#cart-form form').append(variants);
-      }
-    });
+    /*$('#cart-form form').bind('submit', function(e) {
+     if ($('#cart-form #product-variants').length == 0) {
+     var variants = $('#product-variants').clone();
+     variants.css('display', 'none');
+     $('#cart-form form').append(variants);
+     }
+     });*/
 
-    $('#product-variants select.option-type').bind("change", function(){
-      $("#product-variants select.option-type").map(function(i, select){
+    $('#product-variants select.option-type').bind("change", function() {
+      $("#product-variants select.option-type").map(function(i, select) {
         var selected_option = $(select).find("option:selected")[0];
         $(select).find("option").each(function(i, option) {
           if (option == selected_option) option.setAttribute('selected', 'selected');

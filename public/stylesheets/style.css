@@ -754,6 +754,7 @@ div#checkout #checkout_form_address #shipping .select_address input {
 
 div#checkout #checkout_form_address { background-image: none; }
 div#checkout #checkout_form_delivery { background-image: none; }
+div#checkout #checkout_form_payment { background-image: none; }
 
 div#checkout #checkout-summary {
   background-color: inherit;
@@ -776,4 +777,9 @@ div#checkout .form-buttons input {
 
 button.primary, a.button.primary, input.button.primary {
   font-weight: normal;
+}
+
+div#checkout #checkout_form_payment #payment {
+  display: block;
+  float: none;
 }

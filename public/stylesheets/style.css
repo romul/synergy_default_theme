@@ -353,11 +353,11 @@ h2 a:hover {
   padding-right: 0;
 }
 
-#product-thumbnails li {
+#variant-thumbnails li, #product-thumbnails li {
   border: 1px solid silver;
 }
 
-#product-thumbnails li.selected {
+#variant-thumbnails li.selected, #product-thumbnails li.selected {
   border: 1px solid gray;
 }
 
@@ -786,3 +786,6 @@ div#checkout #checkout_form_payment #payment {
   padding: .4em;
 }
 
+h4#variant-images {
+  display: none;
+}

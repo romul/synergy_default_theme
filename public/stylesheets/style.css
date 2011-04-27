@@ -783,3 +783,7 @@ div#checkout #checkout_form_payment #payment {
   display: block;
   float: none;
 }
+
+#payment .description {
+  padding: .4em;
+}

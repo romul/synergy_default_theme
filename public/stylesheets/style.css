@@ -126,17 +126,16 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   vertical-align: bottom;
   color: white;
+  padding-bottom: 3px;
 }
 
 .header_panel a.empty, .header_panel a.full {
   background: url("../images/cart.png") no-repeat left center;
-  padding-left: 29px;
   padding: 10px 0 10px 29px;
 }
 
 .header_panel #compare_products {
   background: url("../images/libra.png") no-repeat left center;
-  padding-left: 29px;
   padding: 10px 0 10px 29px;
 }
 
@@ -453,10 +452,9 @@ body.two-col #content {
   background: none;
   border: 1px solid white;
   margin: 0;
-  padding: 0;
+  padding: 2em 0 0 0;
   width: 248px;
   height: 230px;
-  padding-top: 2em;
 }
 
 .product-listing li:hover {
@@ -787,3 +785,4 @@ div#checkout #checkout_form_payment #payment {
 #payment .description {
   padding: .4em;
 }
+

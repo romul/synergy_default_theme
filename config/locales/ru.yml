@@ -1,4 +1,9 @@
 ru:
+  activerecord:
+    attributes:
+      user:
+        email: "Электронная почта"
+
   number:
     # Used in number_to_currency()
     currency:
@@ -11,5 +16,7 @@ ru:
   compare_products:
     сomparable_products: "Список товаров:"
   subtotal: Стоимость товара
-  update: Пересчитать
-  save_and_continue: Далее
+  update: Обновить
+  save_and_continue: Продолжить
+  email: "Электронная почта"
+  email_address: "Адрес электронной почты"

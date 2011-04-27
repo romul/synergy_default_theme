@@ -764,3 +764,7 @@ div#checkout #checkout-summary {
 div#checkout h3 {
   margin-top: 0;
 }
+
+div#checkout #checkout_form_address .form-buttons {
+  padding-left: 0;
+}

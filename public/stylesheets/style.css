@@ -751,3 +751,16 @@ div#checkout #checkout_form_address #shipping .select_address input {
 .header_panel #keywords_submit:hover {
   background-position: 0 -24px;
 }
+
+div#checkout #checkout_form_address { background-image: none; }
+div#checkout #checkout_form_delivery { background-image: none; }
+
+div#checkout #checkout-summary {
+  background-color: inherit;
+  padding: 0;
+  width: 300px;
+}
+
+div#checkout h3 {
+  margin-top: 0;
+}

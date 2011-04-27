@@ -747,3 +747,7 @@ div#checkout #checkout_form_address #shipping .select_address input {
 #product-variants-container {
   clear: both;
 }
+
+.header_panel #keywords_submit:hover {
+  background-position: 0 -24px;
+}

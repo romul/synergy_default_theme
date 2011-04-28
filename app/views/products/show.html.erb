@@ -82,7 +82,11 @@
     <h3>Описание:</h3>
 
     <div class="description-content">
-      <%= product_description(@product) rescue t("product_has_no_description") %>
+      <% if @product.description %>
+        <%= product_description(@product) %>
+      <% else %>
+        <%= t("product_has_no_description") %>
+      <% end %>
     </div>
   <% end %>
 </div>

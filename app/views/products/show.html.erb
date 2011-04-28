@@ -37,6 +37,15 @@
       <div id="main-image">
         <%= render 'image' %>
       </div>
+      <div class="simple_overlay" id="large_image_overlay" style="display: none">
+        <div id="overlay_large_image">
+          <img src="<%= @product.images.first.attachment.url(:large) %>"/>
+        </div>
+        <div id="thumbs_gallery">
+          <ul></ul>
+        </div>
+      </div>
+
     <% end %>
 
     <div id="product-variants-container">

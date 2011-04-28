@@ -535,6 +535,57 @@ ul.thumbnails li a img {
   position: static;
 }
 
+#overlay_large_image {
+  text-align: center;
+}
+
+#thumbs_gallery {
+  text-align: center;
+}
+
+#thumbs_gallery ul {
+  list-style: none;
+  display: inline-block;
+  margin: .5em 0;
+}
+
+#thumbs_gallery ul li {
+  width: 42px;
+  height: 42px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  min-height: 42px;
+  padding: 0;
+  float: none;
+  display: inline-block;
+  border: 1px solid silver;
+  background: white;
+}
+
+#thumbs_gallery ul li a {
+  height: 42px;
+  width: 42px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#large_image_overlay {
+  background: white;
+}
+
+ul.thumbnails li a {
+  height: 42px;
+  width: 42px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+ul.thumbnails li a img {
+  position: static;
+}
+
 #cart_wrapper .price {
   font-size: 18pt !important;
   color: black;
@@ -691,8 +742,11 @@ div.star-rating-hover a {
   -moz-border-radius: 5px;
   webkit-border-radius: 5px;
   box-shadow: rgba(0, 0, 0, .5) 0 10px 10px;
-  background: url("/images/login_bar_bg.png") repeat-x #e5e5e5;
   z-index: 100;
+}
+
+#login_overlay {
+  background: url("/images/login_bar_bg.png") repeat-x #e5e5e5;
 }
 
 #login_overlay input[type=text], #login_overlay input[type=password] {
@@ -791,7 +845,7 @@ div#checkout #checkout_form_address .form-buttons {
 }
 
 div#checkout .form-buttons input {
-  width: 100px;
+  width: 140px;
   text-transform: none;
 }
 

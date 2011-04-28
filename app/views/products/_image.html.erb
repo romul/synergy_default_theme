@@ -1,0 +1,8 @@
+<%
+   image ||= @product.images.first
+   if image %>
+  <%= link_to image_tag(image.attachment.url(:product)), image.attachment.url(:large), :rel => '#large_image_overlay' %>
+<% else %>
+  <%= link_to product_image(@product), :rel => '#large_image_overlay' %>
+<% end %>
+

@@ -1,0 +1,22 @@
+<% content_for :page_title do %>
+<h1 class="font-41 black"><%= t("robokassa.pay")%></h1>
+<% end %>
+<%= form_tag @gateway.url, :method => "POST" do %>
+<%= hidden_field_tag(:"MrchLogin", @gateway.options[:mrch_login]) %>
+<%= hidden_field_tag(:"OutSum", @order.total)%>
+<%= hidden_field_tag(:"InvId", @order.id)%>
+<%= hidden_field_tag(:"Desc", I18n.t("robokassa.details_of_payment", :order_number => @order.number)) %>
+<%= hidden_field_tag(:"SignatureValue", @signature) %>
+<h1 class="font-41 black"><%= "#{t('order')} #{@order.number}" %></h1>
+<%= render :partial => 'shared/order_details', :locals => {:order => @order} %>
+<div class="clear"></div>
+<div class="font-41">&nbsp;</div>
+<button class="button_buy left" href="">
+  <span class="left_b"></span>
+  <span class="line_b">
+    <span class="text_z_1"><%=t("pay") %></span>
+  </span>
+  <span class="right_b"></span>
+</button>
+<div class="clear"></div>
+<% end %>

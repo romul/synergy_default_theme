@@ -355,6 +355,7 @@ h2 a:hover {
 
 #thumbnails {
   margin-top: 1em;
+  width: 360px;
 }
 
 #variant-thumbnails li, #product-thumbnails li {

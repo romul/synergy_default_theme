@@ -468,7 +468,7 @@ body.two-col #content {
 .product-listing li {
   background: none;
   border: 1px solid white;
-  margin: 0;
+  margin: 0 0 15px 0;
   padding: 2em 0 0 0;
   width: 248px;
   height: 230px;

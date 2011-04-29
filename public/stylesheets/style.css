@@ -774,6 +774,11 @@ div#checkout #checkout-summary {
   background-color: inherit;
   padding: 0;
   width: 300px;
+  border: 1px solid #aaa;
+  padding: 10px 0 0 10px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  webkit-border-radius: 5px;
 }
 
 div#checkout h3 {

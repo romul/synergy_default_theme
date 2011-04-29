@@ -809,3 +809,14 @@ h4#variant-images {
 .description-content {
   margin-right: 220px;
 }
+
+#cart-detail #line_items td:first-child {
+  width: 130px;
+  vertical-align: middle;
+  text-align: center;
+  padding: 3px;
+}
+
+#cart-detail #line_items tr {
+  border-bottom: 1px solid #eee;
+}

@@ -183,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content h3 {
-  margin-top: 1.8em;
+  margin-top: 1em;
   color: #502559;
 }
 
@@ -301,7 +301,7 @@ h1 {
 h2 {
   line-height: 0.85em;
   font-size: 16pt;
-  margin-bottom: 1em;
+  margin-bottom: 0.4em;
   color: gray;
 }
 

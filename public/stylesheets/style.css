@@ -127,6 +127,7 @@ h1, h2, h3, h4, h5, h6 {
   vertical-align: bottom;
   color: white;
   padding-bottom: 3px;
+  cursor: pointer;
 }
 
 .header_panel a.empty, .header_panel a.full {

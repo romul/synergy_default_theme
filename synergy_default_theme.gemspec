@@ -15,7 +15,9 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.has_rdoc = true
 
-  s.add_dependency('spree_core', '>= 0.50.99')
+  s.add_dependency('spree_core', '>= 0.50.2')
+  s.add_dependency('synergy', '>= 0.50.0.rc1')
+  s.add_dependency('dalli', '~> 1.0.3')
+
 end

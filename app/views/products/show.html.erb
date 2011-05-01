@@ -3,7 +3,7 @@
     <%= render :partial => "shared/taxonomies" %>
   <% end %>
 <% end %>
-
+<% if defined?(SpreeReviews) %>
 <script type="text/javascript">
   $(function() {
     $('#description_add_review_link').click(function() {
@@ -27,7 +27,7 @@
     $('#add_review_container').slideDown();
   }
 </script>
-
+<% end %>
 <% @body_id = 'product-details' %>
 
 <h1><%= @product.name %></h1>
@@ -37,7 +37,6 @@
       <div id="main-image">
         <%= render 'image' %>
       </div>
-
     <% end %>
 
     <div id="product-variants-container">
@@ -53,13 +52,19 @@
 
     <div id="product_description_menu">
       <table cellpadding="0" cellspacing="0" style="width: 300px">
+        <% if defined?(SpreeReviews) %>
         <tr>
           <td><%= render 'shared/rating', :product => @product %></td>
           <td><a href="#reviews_anc">Отзывы(<%= @product.reviews.approved.count %>)</a></td>
         </tr>
+        <% end %>
         <tr>
-          <td><%= render 'compare' if @comparable_products %></td>
-          <td><a id="description_add_review_link" href="#reviews_anc">Добавить отзыв</a></td>
+          <% if defined?(SpreeCompareProducts) %>
+            <td><%= render 'compare' if @comparable_products %></td>
+          <% end %>
+          <% if defined?(SpreeReviews) %>
+            <td><a id="description_add_review_link" href="#reviews_anc">Добавить отзыв</a></td>
+          <% end %>
         </tr>
       </table>
     </div>
@@ -110,7 +115,7 @@
           </div>
           <div>
             <div><%= link_to p.name, p %></div>
-            <div><%= render 'shared/rating', :product => p %></div>
+            <div><%= render 'shared/rating', :product => p if defined?(SpreeReviews) %></div>
             <div class="similar_product_price"><%= product_price(p) %></div>
           </div>
         </li>
@@ -149,5 +154,5 @@
 
 
 <%= render 'taxons' %>
-<%= render 'shared/reviews' %>
+<%= render 'shared/reviews' if defined?(SpreeReviews) %>
 

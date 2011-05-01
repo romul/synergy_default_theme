@@ -20,7 +20,9 @@
               <%= link_to small_image(product), product %>
           </div>
           <% end %>
-          <div align="center" style="height: 15px;"><%= render 'shared/rating', :product => product %></div>
+          <% if defined?(SpreeReviews) %>
+            <div align="center" style="height: 15px;"><%= render 'shared/rating', :product => product %></div>
+          <% end %>  
           <%= link_to raw("<span class='price selling'>#{product_price(product)}</span>"), product, :class => 'info' %>
         <% end %>
       </li>

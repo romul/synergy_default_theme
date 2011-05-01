@@ -1,5 +1,7 @@
 require 'spree_core'
 require 'synergy_default_theme_hooks'
+require 'spree_reviews_hook' if defined?(SpreeReviews)
+require 'spree_compare_products_hooks' if defined?(SpreeCompareProducts)
 
 module SynergyDefaultTheme
   class Engine < Rails::Engine
@@ -14,7 +16,7 @@ module SynergyDefaultTheme
       Admin::PagesController.cache_sweeper :page_sweeper
       Admin::TrackersController.cache_sweeper :tracker_sweeper
       
-      if Spree::RecentlyViewed::Config.instance
+      if defined?(Spree::RecentlyViewed) && Spree::RecentlyViewed::Config.instance
         Spree::RecentlyViewed::Config.set :recently_viewed_products_max_count => 3
       end
       

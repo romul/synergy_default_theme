@@ -4,7 +4,7 @@
   <%= hook :inside_head do %>
     <%= render 'shared/head' %>
   <% end %>
-  <%= render 'shared/synergy_startup_javascript' %>
+  <%= render 'shared/synergy_compare_products_js' if defined?(SpreeCompareProducts) %>
   <%= stylesheet_link_tag 'style' %>
 </head>
 <%
@@ -53,7 +53,7 @@
       <div align="left" style="margin-top: 1em">
         <%= hook :shared_login_bar %>
       </div>
-      <%= render :partial => 'shared/comparable_products' %>
+      <%= render :partial => 'shared/comparable_products' if defined?(SpreeCompareProducts) %>
       <% if content_for?(:sidebar) %>
         <div class="sidebar">
           <%= hook :sidebar do %>

@@ -1,0 +1,25 @@
+<div id="product_like_buttons">
+  <% content_for :head do %>
+  <style>
+    #vk_like {
+      display: inline-block !important;
+      clear: none !important;
+      width: 173px !important;
+    }
+  </style>
+  <% end %>
+  <!-- Put this script tag to the <head> of your page -->
+  <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?25"></script>
+
+  <script type="text/javascript">
+    VK.init({apiId: 2314055, onlyWidgets: true});
+  </script>
+
+  <!-- Put this div tag to the place, where the Like block will be -->
+  <div id="vk_like" style=""></div>
+  <script type="text/javascript">
+  VK.Widgets.Like("vk_like", {type: "button"});
+  </script>
+
+  <iframe src="http://www.facebook.com/plugins/like.php?href=<%= CGI::escape(request.url) %>&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
+</div>

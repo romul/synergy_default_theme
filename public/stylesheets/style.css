@@ -535,21 +535,21 @@ ul.thumbnails li a img {
   position: static;
 }
 
-#overlay_large_image {
+#large_image_overlay .large_image {
   text-align: center;
 }
 
-#thumbs_gallery {
+#large_image_overlay .thumbs_gallery {
   text-align: center;
 }
 
-#thumbs_gallery ul {
+#large_image_overlay .thumbs_gallery ul {
   list-style: none;
   display: inline-block;
   margin: .5em 0;
 }
 
-#thumbs_gallery ul li {
+#large_image_overlay .thumbs_gallery ul li {
   width: 42px;
   height: 42px;
   margin-right: 4px;
@@ -562,7 +562,7 @@ ul.thumbnails li a img {
   background: white;
 }
 
-#thumbs_gallery ul li a {
+#large_image_overlay .thumbs_gallery ul li a {
   height: 42px;
   width: 42px;
   display: table-cell;

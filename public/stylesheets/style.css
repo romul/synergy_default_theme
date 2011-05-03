@@ -547,6 +547,7 @@ ul.thumbnails li a img {
   list-style: none;
   display: inline-block;
   margin: .5em 0;
+  width: 250px;
 }
 
 #large_image_overlay .thumbs_gallery ul li {

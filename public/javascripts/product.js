@@ -13,7 +13,6 @@ var add_image_handlers = function() {
 
   $('#main-image a').click(function() {
     var thumbs = getThumbnails();
-    $('#large_image_overlay .large_image img').attr('src', $(this).attr('large'));
 
     if (thumbs.size() > 0) {
       var large_image = $('#large_image_overlay .large_image img');
@@ -34,7 +33,8 @@ var add_image_handlers = function() {
         overlay_box.animate({
           'width': width,
           'height': height,
-          'left': Math.max((w.width() - width) / 2 - 11, 0) + 'px'
+          'left': Math.max((w.width() - width) / 2 - 11, 0) + 'px',
+          'top': Math.max((w.height() - height) / 2 - 11, 0) + 'px'
         }, 200, function() {
           container.animate({ 'opacity': 1 }, 200);
         });
@@ -56,6 +56,9 @@ var add_image_handlers = function() {
       color: 'black',
       opacity: 0.3
     },
+    onBeforeLoad: function() {
+      $('#large_image_overlay .large_image img').attr('src', $('#main-image a').attr('large'));
+    },
     onLoad: function() {
       var overlay_box = $('#large_image_overlay');
       overlay_box.css({
@@ -70,7 +73,8 @@ var add_image_handlers = function() {
         'width': '',
         'height': ''
       });
-    }
+    },
+    top: 'center'
   });
 };
 

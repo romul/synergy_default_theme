@@ -18,3 +18,23 @@
   <% end %>
 </div>
 
+<script type="text/javascript">
+  $(function() {
+    $('#new_review').validate({
+      rules: {
+        'review[review]': {
+          required: true
+        },
+        'review[rating]': {
+          required: true
+        }
+      },
+      messages: {
+        'review[rating]': {
+          required: 'Оцените товар'
+        }
+      }
+    });
+  });
+</script>
+

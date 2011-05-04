@@ -837,3 +837,8 @@ h4#variant-images {
   height: 34px;
   border-bottom: 1px solid silver;
 }
+
+#new_review label.error {
+  display: block;
+  color: red;
+}

@@ -655,6 +655,10 @@ hr.space {
   border-bottom: 1px solid silver;
 }
 
+#cart-detail th:first-child {
+  width: 420px;
+}
+
 #cart-detail .price {
   font-size: 16pt;
 }

@@ -1,0 +1,1 @@
+#Spree::Config[:vkontakte_app_id] = 'VK_APP'

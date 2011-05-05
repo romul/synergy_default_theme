@@ -957,3 +957,7 @@ h4#variant-images {
   display: block;
   color: red;
 }
+
+div.rating-cancel {
+  display: none !important;
+}

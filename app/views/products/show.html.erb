@@ -50,6 +50,7 @@
       <div id="main-image">
         <%= render 'image' %>
       </div>
+      <% if @product.images.any? %>
       <div class="simple_overlay" id="large_image_overlay" style="display: none">
         <div class="overlay_container">
           <div class="large_image">
@@ -60,6 +61,7 @@
           </div>
         </div>
       </div>
+      <% end %>
 
     <% end %>
 

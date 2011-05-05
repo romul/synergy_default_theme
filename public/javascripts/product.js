@@ -1,6 +1,6 @@
 var add_image_handlers = function() {
   $('ul.thumbnails li').eq(0).addClass('selected');
-  $('ul.thumbnails li a').click(function(e) {
+  $('ul.thumbnails li a').live('click', function(e) {
     var selectedThumb = $(this);
     $('#main-image img').attr('src', selectedThumb.attr('product'));
     $('ul.thumbnails li').removeClass('selected');

@@ -13,7 +13,7 @@
   <% if @product.has_variants? %>
     <div id="product-variants">
     <% if defined?(SpreeEnhancedOptionTypes) %>
-      <%= render :partial => 'radio_sets', :locals => {:f => f} %>
+      <%= render :partial => (Spree::Config[:eot_presentation_type] || 'radio_sets'), :locals => {:f => f} %>
     <% else %>
       <h2><%= t('variants') %></h2>
       <ul>

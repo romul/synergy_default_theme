@@ -418,9 +418,13 @@ h2 a:hover {
 }
 
 #cart_wrapper {
-  text-align: left;
+  text-align: right;
   float: right;
   width: 220px;
+}
+
+#product-variants {
+  text-align: left;
 }
 
 #product-variants .price {

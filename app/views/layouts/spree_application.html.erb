@@ -50,14 +50,33 @@
   </div>
   <div align="center">
     <div class="fixed_width">
-      <div align="left" style="margin-top: 1em">
-        <%= hook :shared_login_bar %>
+      <div id="top_panel">
+        <div id="top_login_bar">
+          <%= hook :shared_login_bar %>
+        </div>
+        <div id="header_menu">
+          <ul class="header_menu">
+            <% for page in Page.header_links do %>
+              <li><%= link_to page.title, page.link %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
       <%= render :partial => 'shared/comparable_products' if defined?(SpreeCompareProducts) %>
       <% if content_for?(:sidebar) %>
         <div class="sidebar">
           <%= hook :sidebar do %>
             <%= yield :sidebar %>
+          <% end %>
+
+          <% if Page.sidebar_links.any? %>
+          <div id="sidebar_menu">
+            <ul class="sidebar_menu">
+              <% for page in Page.sidebar_links do %>
+                <li><%= link_to page.title, page.link %></li>
+              <% end %>
+            </ul>
+          </div>
           <% end %>
         </div>
       <% end %>

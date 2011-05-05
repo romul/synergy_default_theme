@@ -655,6 +655,7 @@ ul.thumbnails li a img {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+  margin-right: 5px;
 }
 
 .similar_product_image_container img {

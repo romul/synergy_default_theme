@@ -40,8 +40,10 @@ var add_image_handlers = function() {
         });
       });
 
+
       $('#large_image_overlay .thumbs_gallery a').click(function(e) {
         var selectedThumb = $(this);
+        if (large_image.attr('src') != selectedThumb.attr('href'))
         container.animate({ 'opacity': 0.01 }, 200, function() {
           large_image.attr('src', selectedThumb.attr('href'));
         });

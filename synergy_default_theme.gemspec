@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
 
-  s.add_dependency('spree_core', '>= 0.50.2')
   s.add_dependency('synergy')
   s.add_dependency('dalli', '~> 1.0.3')
 

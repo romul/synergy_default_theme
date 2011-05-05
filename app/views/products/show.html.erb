@@ -14,6 +14,17 @@
     /*var product_variants = $('#product-variants').detach();
      if (product_variants.length > 0) {
      $('#product-variants-container').append(product_variants);
+    variant_changed(default_variant_id);
+
+    $('#product-variants select.option-type').bind("change", function() {
+      $("#product-variants select.option-type").map(function(i, select) {
+        var selected_option = $(select).find("option:selected")[0];
+        $(select).find("option").each(function(i, option) {
+          if (option == selected_option) option.setAttribute('selected', 'selected');
+          else $(option).removeAttr('selected');
+        });
+      });
+    });
      }*/
 
     $('#add_review_link').click(function(e) {
@@ -21,6 +32,8 @@
       $(this).slideUp();
       e.preventDefault();
     });
+
+    add_image_handlers();
   });
 
   function show_add_review_container() {
@@ -131,26 +144,15 @@
   </div>
 <% end %>
 
-<script>
-  <% if @product.has_variants? %>
-  $(function() {
-    variant_changed(default_variant_id);
-
-    $('#product-variants select.option-type').bind("change", function() {
-      $("#product-variants select.option-type").map(function(i, select) {
-        var selected_option = $(select).find("option:selected")[0];
-        $(select).find("option").each(function(i, option) {
-          if (option == selected_option) option.setAttribute('selected', 'selected');
-          else $(option).removeAttr('selected');
-        });
-      });
-    });
-  });
-  <% else %>
-  add_image_handlers();
-  <% end %>
+<% unless defined?(SpreeEnhancedOptionTypes) %>
+  <%= javascript_include_tag 'product_simple' %>
+<% else %>
+<script type="text/javascript">
+$(function() {
+  variant_changed(default_variant_id);
+});
 </script>
+<% end %>
 
 <%= render 'taxons' %>
 <%= render 'shared/reviews' if defined?(SpreeReviews) %>
-

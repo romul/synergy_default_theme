@@ -420,6 +420,12 @@ h2 a:hover {
 #cart_wrapper {
   text-align: left;
   float: right;
+  width: 220px;
+}
+
+#product-variants .price {
+  font-size: 12px;
+  white-space: nowrap;
 }
 
 #cart-form fieldset {
@@ -604,7 +610,7 @@ ul.thumbnails li a img {
   position: static;
 }
 
-#cart_wrapper .price {
+#cart_wrapper .prices .price {
   font-size: 18pt !important;
   color: black;
 }
@@ -674,10 +680,6 @@ hr.space {
 
 #cart-detail th:first-child {
   width: 420px;
-}
-
-#cart-detail .price {
-  font-size: 16pt;
 }
 
 #subtotal h3 {

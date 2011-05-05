@@ -80,7 +80,6 @@ var add_image_handlers = function() {
   });
 };
 
-
 function getThumbnails() {
   return $('ul.thumbnails li').map(function() {
     return {

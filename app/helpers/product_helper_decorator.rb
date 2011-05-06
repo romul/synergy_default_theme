@@ -13,4 +13,10 @@ ProductsHelper.module_eval do
   def product_description(product)
     raw(product.description)
   end
+
+  def large_sizes
+    return @large_sizes if @large_sizes
+    match = Image.attachment_definitions[:attachment][:styles][:large].match(/(\d+)x(\d+)/)
+    @large_sizes = {:width => match[1], :height => match[2]}
+  end
 end

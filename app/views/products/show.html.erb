@@ -37,10 +37,9 @@
         <%= render 'image' %>
       </div>
       <% if @product.images.any? %>
-      <% Image.attachment_definitions[:attachment][:styles][:large].match(/(\d+)x(\d+)/) %>
       <div class="simple_overlay" id="large_image_overlay" style="display: none;">
         <div class="overlay_container">
-          <div class="large_image" style="width: <%= $1 %>px; height: <%= $2 %>px">
+          <div class="large_image" style="width: <%= large_sizes[:width] %>px; height: <%= large_sizes[:height] %>px">
             <img src="<%= @product.images.first.attachment.url(:large) %>"/>
           </div>
           <div class="thumbs_gallery">

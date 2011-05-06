@@ -715,7 +715,7 @@ hr.space {
 }
 
 #reviews div.review {
-  border-bottom: none;
+  border-bottom: 1px solid #ddd;
 }
 
 #new_review .review_title_field {

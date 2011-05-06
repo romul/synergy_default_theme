@@ -3,35 +3,21 @@
     <%= render :partial => "shared/taxonomies" %>
   <% end %>
 <% end %>
-<% if defined?(SpreeReviews) %>
 <script type="text/javascript">
   $(function() {
+    <% if defined?(SpreeReviews) %>
+
     $('#description_add_review_link').click(function() {
       show_add_review_container();
       $('#add_review_link').slideUp();
     });
-
-    /*var product_variants = $('#product-variants').detach();
-     if (product_variants.length > 0) {
-     $('#product-variants-container').append(product_variants);
-    variant_changed(default_variant_id);
-
-    $('#product-variants select.option-type').bind("change", function() {
-      $("#product-variants select.option-type").map(function(i, select) {
-        var selected_option = $(select).find("option:selected")[0];
-        $(select).find("option").each(function(i, option) {
-          if (option == selected_option) option.setAttribute('selected', 'selected');
-          else $(option).removeAttr('selected');
-        });
-      });
-    });
-     }*/
 
     $('#add_review_link').click(function(e) {
       show_add_review_container();
       $(this).slideUp();
       e.preventDefault();
     });
+    <% end %>
 
     add_image_handlers();
   });
@@ -39,8 +25,8 @@
   function show_add_review_container() {
     $('#add_review_container').slideDown();
   }
+
 </script>
-<% end %>
 <% @body_id = 'product-details' %>
 
 <h1><%= @product.name %></h1>
@@ -51,9 +37,10 @@
         <%= render 'image' %>
       </div>
       <% if @product.images.any? %>
-      <div class="simple_overlay" id="large_image_overlay" style="display: none">
+      <% Image.attachment_definitions[:attachment][:styles][:large].match(/(\d+)x(\d+)/) %>
+      <div class="simple_overlay" id="large_image_overlay" style="display: none;">
         <div class="overlay_container">
-          <div class="large_image">
+          <div class="large_image" style="width: <%= $1 %>px; height: <%= $2 %>px">
             <img src="<%= @product.images.first.attachment.url(:large) %>"/>
           </div>
           <div class="thumbs_gallery">

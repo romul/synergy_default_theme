@@ -17,10 +17,7 @@ var add_image_handlers = function() {
     if (thumbs.size() > 0) {
       var large_image = $('#large_image_overlay .large_image img');
       var overlay = $('#large_image_overlay').data('overlay');
-      var overlay_box = $('#large_image_overlay');
-      var container = $('#large_image_overlay .overlay_container');
       var thumbnails = $('#large_image_overlay .thumbs_gallery ul');
-      var w = $(window);
 
       $('#large_image_overlay .thumbs_gallery').show();
       thumbnails.empty();
@@ -29,22 +26,14 @@ var add_image_handlers = function() {
       });
 
       large_image.load(function() {
-        var height = container.height(), width = Math.max(large_image.width(), thumbnails.width());
-        overlay_box.animate({
-          'width': width,
-          'height': height,
-          'left': Math.max((w.width() - width) / 2 - 11, 0) + 'px',
-          'top': Math.max((w.height() - height) / 2 - 11, 0) + 'px'
-        }, 200, function() {
-          container.animate({ 'opacity': 1 }, 200);
-        });
+        large_image.animate({ 'opacity': 1 }, 200);
       });
 
 
       $('#large_image_overlay .thumbs_gallery a').click(function(e) {
         var selectedThumb = $(this);
         if (large_image.attr('src') != selectedThumb.attr('href'))
-        container.animate({ 'opacity': 0.01 }, 200, function() {
+        large_image.animate({ 'opacity': 0.01 }, 200, function() {
           large_image.attr('src', selectedThumb.attr('href'));
         });
         e.preventDefault();
@@ -58,25 +47,10 @@ var add_image_handlers = function() {
       color: 'black',
       opacity: 0.3
     },
-    onBeforeLoad: function() {
-      $('#large_image_overlay .large_image img').attr('src', $('#main-image a').attr('large'));
-    },
-    onLoad: function() {
-      var overlay_box = $('#large_image_overlay');
-      overlay_box.css({
-        'width': overlay_box.width(),
-        'height': overlay_box.height()
-      });
-    },
     onBeforeClose: function() {
       $('#large_image_overlay .large_image img').unbind('load');
-      var overlay_box = $('#large_image_overlay');
-      overlay_box.css({
-        'width': '',
-        'height': ''
-      });
     },
-    top: 'center'
+    fixed: false
   });
 };
 

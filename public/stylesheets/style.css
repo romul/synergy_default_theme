@@ -563,7 +563,9 @@ ul.thumbnails li a img {
 }
 
 #large_image_overlay .large_image {
+  display: table-cell;
   text-align: center;
+  vertical-align: middle;
 }
 
 #large_image_overlay .thumbs_gallery {

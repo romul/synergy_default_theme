@@ -1,4 +1,4 @@
-<%= javascript_include_tag 'http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js' %>
+<%= javascript_include_tag 'jquery.tools.min.js' %>
 
 <script type="text/javascript">
   $(function() {
@@ -8,7 +8,7 @@
     jtooltip = $('#compare_products').tooltip({
       position: 'bottom center',
       events: { def: 'none,none' },
-      delay: 200000
+      delay: 3000
     }).data('tooltip');
 
     $('#compare_products').click(function(e) {

@@ -1,7 +1,6 @@
 Spree::BaseHelper.module_eval do
   def link_to_cart(text = t('cart'))
-    #return "" if current_page?(cart_path)
-    #css_class = nil
+    css_class = nil
     if current_order.nil? or current_order.line_items.empty?
       text = "#{text}"
       css_class = 'empty'
@@ -10,5 +9,14 @@ Spree::BaseHelper.module_eval do
       css_class = 'full'
     end
     link_to text, cart_path, :class => css_class
+  end
+  
+  # Outputs the corresponding flash message if any are set
+  def flash_messages
+    %w(notice warning error).map do |msg|
+      content_tag(:script,
+      		"$.jGrowl(\"#{flash[msg.to_sym]}\", { header: '#{t(msg, :default => msg).mb_chars.titleize}', sticky: true, theme: '#{msg}' });".html_safe
+			) unless flash[msg.to_sym].blank?
+    end.join("\n").html_safe
   end
 end

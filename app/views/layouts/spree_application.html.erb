@@ -3,9 +3,10 @@
 <head>
   <%= hook :inside_head do %>
     <%= render 'shared/head' %>
+    <%= javascript_include_tag 'jquery.jgrowl.min' %>
   <% end %>
   <%= render 'shared/synergy_compare_products_js' if defined?(SpreeCompareProducts) %>
-  <%= stylesheet_link_tag 'style' %>
+  <%= stylesheet_link_tag 'style', 'jquery.jgrowl' %>
 </head>
 <%
    if @body_class.nil?
@@ -79,12 +80,15 @@
         </div>
       <% end %>
       <div id="content" class="content">
-        <% if flash.notice %>
-          <div class="flash notice"><%= flash.notice %></div>
-        <% end %>
-        <% if flash[:error] %>
-          <div class="flash errors"><%= flash[:error] %></div>
-        <% end %>
+        <%= flash_messages %>
+        <noscript>
+          <% if flash[:notice] %>
+            <div class="flash notice"><%= flash[:notice] %></div>
+          <% end %>
+          <% if flash[:error] %>
+            <div class="flash errors"><%= flash[:error] %></div>
+          <% end %>
+        </noscript>
         <%= yield %>
       </div>
       <div style="height: 10px;"></div>

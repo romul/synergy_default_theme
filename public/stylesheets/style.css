@@ -1003,3 +1003,7 @@ h4#variant-images {
 div.rating-cancel {
   display: none !important;
 }
+
+#page_content {
+  padding-left: 5px;
+}

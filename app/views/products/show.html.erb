@@ -9,12 +9,12 @@
 
     $('#description_add_review_link').click(function() {
       show_add_review_container();
-      $('#add_review_link').slideUp();
+      $('#add_review_link').parent('div').slideUp();
     });
 
     $('#add_review_link').click(function(e) {
       show_add_review_container();
-      $(this).slideUp();
+      $(this).parent('div').slideUp();
       e.preventDefault();
     });
     <% end %>

@@ -32,7 +32,7 @@
         </li>
         <li>
           <% if @comparable_products %>
-            <div><%= link_to "Сравнение товаров (#{@comparable_products.count})", compare_products_path, {:id => "compare_products"} %></div>
+            <div><%= link_to t(:compare_products, :scope => :compare_products, :count => @comparable_products.count), compare_products_path, {:id => "compare_products"} %></div>
             <div id="tooltip" class="tooltip" style="display: none">
               <div class="tooltip_top"></div>
               <div class="tooltip_middle">

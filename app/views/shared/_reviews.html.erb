@@ -1,16 +1,16 @@
 <div id="reviews">
   <a name="reviews_anc"></a>
-  <h3><%= t('review_header') %></h3>
+  <h3><%= t(:review_header) %></h3>
 
   <div style="margin-bottom: 2em">
-    <a id="add_review_link" href="#">Добавить отзыв</a>
+    <a id="add_review_link" href="#"><%= t(:submit_your_review) %></a>
   </div>
 
   <div id="add_review_container" style="display: none">
     <%= render 'reviews/form', { :product => @product, :review => Review.new } %>
   </div>
 
-  <hr class="review_hr" style="" />
+  <hr class="review_hr" />
 
   <a name="reviews_list"></a>
   <% for review in @product.reviews.approval_filter %>
@@ -34,7 +34,7 @@
       },
       messages: {
         'review[rating]': {
-          required: 'Оцените товар'
+          required: '<%= t(:you_must_enter_value_for_rating) %>'
         }
       }
     });

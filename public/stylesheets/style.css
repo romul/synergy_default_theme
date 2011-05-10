@@ -794,6 +794,10 @@ hr.space {
   display: inline-block;
 }
 
+.rating-stars-container .star-rating-control {
+  margin: 5px 0 0;
+}
+
 div.star-rating, div.star-rating a {
   background: url('/images/star.png') no-repeat;
 }

@@ -908,6 +908,11 @@ ul.header_menu li a:hover {
   padding-bottom: 0;
 }
 
+#order_details th, order_details td {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 div#checkout #checkout_form_address #shipping .select_address input {
   width: auto;
 }

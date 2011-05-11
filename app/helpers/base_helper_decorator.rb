@@ -13,13 +13,10 @@ Spree::BaseHelper.module_eval do
   
   # Outputs the corresponding flash message if any are set
   def flash_messages
-    result_content = %w(notice warning error).map do |msg|
+    %w(notice warning error).map do |msg|
       content_tag(:script,
-      		"$.jGrowl(\"#{flash[msg.to_sym]}\", { header: '#{t(msg, :default => msg).mb_chars.titleize}', sticky: true, theme: '#{msg}' });".html_safe
+      		"$.jGrowl(\"#{flash.delete(msg.to_sym)}\", { header: '#{t(msg, :default => msg).mb_chars.titleize}', sticky: true, theme: '#{msg}' });".html_safe
 			) unless flash[msg.to_sym].blank?
     end.join("\n").html_safe
-    flash.clear
-    
-    result_content
   end
 end

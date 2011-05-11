@@ -83,6 +83,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+#comparable_products_wrapper .no_products_message {
+  margin-bottom: 1em;
+}
+
 #comparable_products {
   margin: 0 0 1.5em 0;
   list-style: none;

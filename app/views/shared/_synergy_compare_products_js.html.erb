@@ -7,8 +7,15 @@
 
     jtooltip = $('#compare_products').tooltip({
       position: 'bottom center',
-      events: { def: 'none,none' },
-      delay: 3000
+      events: { def: 'none,none', tooltip: "none,none" },
+      delay: 5000,
+      effect: 'fade',
+      onHide: function() {
+        $("#compare_products").removeClass('shown');
+      },
+      onBeforeShow: function() {
+        $("#compare_products").addClass('shown');
+      }
     }).data('tooltip');
 
     $('#compare_products').click(function(e) {
@@ -21,8 +28,6 @@
       e.preventDefault();
     });
 
-    $("#compare_products").html("<%= t(:compare_products, :scope => :compare_products, :count => @comparable_products.count) %>");
-
     $("#compare_products_link a").addClass('button');
     $("#log_in_link").overlay({
       mask: {
@@ -30,22 +35,55 @@
         opacity: 0.3
       }
     });
+
+    updateCompareProductsCount();
   });
+
+  function updateCompareProductsCount() {
+    var items_count = $("#comparable_products").children().length;
+    if (items_count == 0) {
+      $("#comparable_products_wrapper .no_products_message").slideDown();
+    }
+    else {
+      $("#comparable_products_wrapper .no_products_message").slideUp();
+    }
+
+    $("#compare_products").html("<%= t(:product_comparison, :scope => :compare_products) %>" + ( items_count > 0 ? " ("+ items_count +")" : "" ));
+  }
+
+  var popupTimer;
 
   function showComparePopup() {
     jtooltip.show();
-    $("#compare_products").addClass('shown');
+    clearTimeout(popupTimer);
+    popupTimer = setTimeout(hideComparePopup, 6000)
   }
 
   function hideComparePopup() {
     jtooltip.hide();
-    $("#compare_products").removeClass('shown');
   }
 
-  function onAddCompareProduct() {
-    showComparePopup();
+  function onAddCompareProduct(line_item, product_id) {
+    $("#comparable_products").append(line_item);
+    $("#comp_item_" + product_id).hide().slideDown(function() {
+      showComparePopup();
+      updateCompareProductsCount();
+    });
   }
-  function onRemoveCompareProduct() {
-    showComparePopup();
+
+  function onRemoveCompareProduct(product_id) {
+    $("#comp_item_" + product_id).slideUp(function() {
+      $(this).remove();
+      showComparePopup();
+      updateCompareProductsCount();
+    });
+  }
+
+  function onCompareProductNotice(notice) {
+    $.jGrowl(notice);
+  }
+
+  function onCompareProductError(error) {
+    $.jGrowl(error);
   }
 </script>

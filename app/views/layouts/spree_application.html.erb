@@ -6,6 +6,7 @@
     <%= javascript_include_tag 'jquery.jgrowl.min' %>
   <% end %>
   <%= render 'shared/synergy_compare_products_js' if defined?(SpreeCompareProducts) %>
+  <%= render 'shared/jgrowl_startup' %>
   <%= stylesheet_link_tag 'style', 'jquery.jgrowl' %>
 </head>
 <%

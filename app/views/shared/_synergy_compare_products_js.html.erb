@@ -80,10 +80,10 @@
   }
 
   function onCompareProductNotice(notice) {
-    $.jGrowl(notice);
+    $.jGrowl(notice, { sticky: true });
   }
 
   function onCompareProductError(error) {
-    $.jGrowl(error);
+    $.jGrowl(error, { header: '<%= t('error') %>', sticky: true });
   }
 </script>

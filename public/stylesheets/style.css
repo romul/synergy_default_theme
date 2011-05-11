@@ -1011,3 +1011,30 @@ div.rating-cancel {
 #page_content {
   padding-left: 5px;
 }
+
+/* jGrowl */
+
+div#jGrowl.top-right {
+  top: 120px;
+}
+
+div#jGrowl {
+  padding-right: 0;
+}
+
+div#jGrowl div.jGrowl-header {
+  font-size: 10pt;
+}
+
+div#jGrowl div.jGrowl-notification, div#jGrowl div.jGrowl-closer {
+  border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px;
+
+  opacity: 0.7;
+  background: #502559;
+}
+
+div#jGrowl div.jGrowl-notification.error {
+  background: #a50000;
+}

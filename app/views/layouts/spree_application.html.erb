@@ -1,13 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <%= hook :inside_head do %>
-    <%= render 'shared/head' %>
-    <%= javascript_include_tag 'jquery.jgrowl.min' %>
-  <% end %>
-  <%= render 'shared/synergy_compare_products_js' if defined?(SpreeCompareProducts) %>
-  <%= render 'shared/jgrowl_startup' %>
-  <%= stylesheet_link_tag 'style', 'jquery.jgrowl' %>
+  <%= render 'shared/head' %>
 </head>
 <%
    if @body_class.nil?

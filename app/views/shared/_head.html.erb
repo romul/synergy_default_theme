@@ -6,9 +6,9 @@
 <%= hook :inside_head do %>
   <%== stylesheet_tags %>
   <%= stylesheet_link_tag 'style', 'jquery.jgrowl' %>
+  <%= javascript_include_tag 'jquery-1.4.2.min', 'jquery.validate.min.js', 'rails', 'application', 'jquery.jgrowl.min', :cache => 'jquery-libs' %>
 <% end %>
 
-<%= javascript_include_tag 'jquery-1.4.2.min', 'jquery.validate.min.js', 'rails', 'application', :cache => 'jquery-core' %>
 <% unless I18n.locale.to_s[0..1] == 'en' %>
   <%= javascript_include_tag ['localization/messages_', I18n.locale.to_s[0..1], '.js'].join %>
 <% end %>

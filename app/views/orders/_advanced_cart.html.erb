@@ -19,10 +19,10 @@
 
       <div id="applying_coupon">
         <h3><%= t(:apply_coupon) %></h3>
-        <label><%= t(:coupon_code) %></label>
+        <label><%= t(:coupon_code) %>:</label>
         <%= order_form.text_field :coupon_code, :size => 19 %>
         <span class="ajax_loader"><%= image_tag 'ajax_loader.gif', :alt => t('loading') %></span>
-        <%= order_form.submit t("apply") %>
+        <%= order_form.submit t("apply"), :class => 'button' %>
       </div>
     <% end %>
 

@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'synergy_default_theme'
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.summary     = 'Default theme for Synergy'
   s.description = 'Тема по умолчанию для платформы электронной коммерции Synergy, основанной на Spree'
   s.required_ruby_version = '>= 1.8.7'

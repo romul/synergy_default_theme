@@ -1,3 +1,3 @@
 ProductsController.class_eval do
-  helper :reviews
+  helper :reviews if defined?(SpreeReviews)
 end

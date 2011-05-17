@@ -6,12 +6,11 @@
   <div class="simple_overlay" id="login_overlay" style="display: none">
     <% if defined?(SpreeSocial) %>
     <div class="login_social_bar">
-      <div style="margin: 6px 0">Войти в магазин с помощью:</div>
+      <div style="margin: 6px 0"><%= t(:sign_in_through_one_of_these_services) %>:</div>
       <div style="margin: 6px 0">
-        <%= image_tag 'twitter_32.png' %>
-        <%= image_tag 'vkontakte_32.png' %>
-        <%= image_tag 'facebook_32.png' %>
-        <%= image_tag 'google_32.png' %>
+        <% AuthenticationMethod.where(:environment => ::Rails.env).each do |user| %>
+          <%= link_to(image_tag("social/#{user.preferred_provider}_32.png", :size => "32x32", :alt => "#{user.preferred_provider}"), user_authentication_omniauth_authorize_path(user.preferred_provider.to_sym), :title => t(:sign_in_with_provider, :provider => user.preferred_provider)) if user.active %>
+        <% end %>
       </div>
     </div>
     <% end %>

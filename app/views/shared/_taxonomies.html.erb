@@ -8,7 +8,14 @@
       <% taxonomy.root.children.each do |taxon| %>
         <li<%== ' class="current"' if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>
           <%= link_to taxon.name, seo_url(taxon) %>
-        </li>
+          <% if taxon.children.any? %>
+          <ul class="nav-list">
+            <% taxon.children.each do |t| %>
+            <li<%== ' class="current"' if @taxon == t %>><%= link_to t.name, seo_url(t) %></li>
+            <% end %>
+          </ul>
+          <% end %>
+       </li>
       <% end %>
     </ul>
   <% end %>

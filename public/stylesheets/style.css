@@ -296,6 +296,18 @@ ul.nav-list li.current a {
   font-weight: bold;
 }
 
+ul.nav-list ul.nav-list {
+  margin: 0 0 0 1em;
+}
+
+ul.nav-list ul.nav-list li a {
+  font-weight: normal;
+}
+
+ul.nav-list ul.nav-list li.current a {
+  font-weight: bold;
+}
+
 #taxonomies {
   margin-bottom: 3em;
 }

@@ -1005,12 +1005,12 @@ h4#variant-images {
   border-bottom: 1px solid #eee;
 }
 
-#order_details {
+table#order_details {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
 }
 
-#order_details th {
+table#order_details th {
   background: url("../images/cart_th_bg.png") repeat-x;
   height: 34px;
   border-bottom: 1px solid silver;

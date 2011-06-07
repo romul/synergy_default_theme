@@ -734,8 +734,12 @@ hr.space {
   border-bottom: 1px solid #ddd;
 }
 
-#new_review #review_title {
+#new_review #review_name {
   width: 200px;
+}
+
+#new_review .review_title_field {
+  display: none;
 }
 
 #new_review .review_rating_field {
@@ -795,7 +799,7 @@ hr.space {
   vertical-align: middle;
 }
 
-.review .title {
+.review .name {
   margin: 0 2em;
   color: #3d5a75;
 }

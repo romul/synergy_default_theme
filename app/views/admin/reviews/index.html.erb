@@ -19,12 +19,12 @@
         <%= review.created_at.to_date %>
       </td>
       <td>
-        <%= review.title %>
+        <%= review.name %><%= " (#{review.user.email})" if review.user %>
       </td>
       <td>
         <%= link_to review.product.name, product_path(review.product) %>
       </td>
-      <td width="60%">
+      <td width="50%">
         <%= h review.review %>
       </td>
       <td>

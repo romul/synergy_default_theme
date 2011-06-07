@@ -2,7 +2,7 @@
   <span class="rating" title="<%= txt_stars(review.rating) %>">
     <%= render :partial => "reviews/stars", :locals => {:stars => review.rating} %>
   </span>
-  <span class="title"><%= review.title %></span>
+  <span class="name"><%= review.name %></span>
   <span class="attribution"><strong><%= l(review.created_at.to_date, :format => :long) %></strong></span>
   <p>
   <%= simple_format(review.review) %>

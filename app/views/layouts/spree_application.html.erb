@@ -19,14 +19,14 @@
   <div class="main_top" align="center">
     <div class="header_panel">
       <ul>
-        <li style="text-align: center; width: 265px">
+        <li class="header_panel_logo">
           <div><%= link_to image_tag("logo.png", :alt => "Synergy logo"), root_url %></div></li>
-        <li style="padding-left: 16px; width: 400px"><%= render 'shared/search' %></li>
-        <li>
+        <li class="header_panel_search"><%= render 'shared/search' %></li>
+        <li class="header_panel_cart">
           <div><%= link_to_cart %></div>
         </li>
-        <li>
-          <% if defined?(SpreeCompareProducts) %>
+        <% if defined?(SpreeCompareProducts) %>
+        <li class="header_panel_compare_product">
             <div><%= link_to(t(:product_comparison, :scope => :compare_products) + (@comparable_products.size > 0 ? " (#{@comparable_products.count})" : ""),
                              compare_products_path, :id => "compare_products") %></div>
             <div id="tooltip" class="tooltip" style="display: none">
@@ -38,8 +38,8 @@
               </div>
               <div class="tooltip_bottom"></div>
             </div>
-          <% end %>
         </li>
+        <% end %>
       </ul>
     </div>
   </div>

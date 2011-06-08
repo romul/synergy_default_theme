@@ -47,6 +47,16 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 4px;
 }
 
+.header_panel .header_panel_logo {
+  text-align: center;
+  width: 265px;
+}
+
+.header_panel .header_panel_search {
+  padding-left: 16px;
+  width: 400px;
+}
+
 .header_panel #taxon {
   display: none;
 }

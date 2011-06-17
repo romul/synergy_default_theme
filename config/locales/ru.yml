@@ -3,7 +3,7 @@ ru:
     attributes:
       user:
         email: "Электронная почта"
-      taxonomу:
+      taxonomy:
         show_on_homepage: "отображать на главной странице"
 
   number:

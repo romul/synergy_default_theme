@@ -3,6 +3,8 @@ ru:
     attributes:
       user:
         email: "Электронная почта"
+      taxonomу:
+        show_on_homepage: "отображать на главной странице"
 
   number:
     # Used in number_to_currency()

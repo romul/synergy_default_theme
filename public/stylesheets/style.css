@@ -1038,6 +1038,11 @@ div.rating-cancel {
   padding-left: 5px;
 }
 
+#registration #guest_checkout {
+  width: 51%;
+  float: right;
+}
+
 /* jGrowl */
 
 div#jGrowl.top-right {

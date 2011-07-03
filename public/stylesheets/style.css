@@ -1043,6 +1043,11 @@ div.rating-cancel {
   float: right;
 }
 
+div#checkout #checkout_form_address #shipping label {
+  width: auto;
+  padding-right: 0;
+}
+
 /* jGrowl */
 
 div#jGrowl.top-right {

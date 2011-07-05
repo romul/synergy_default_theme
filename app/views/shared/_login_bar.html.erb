@@ -2,7 +2,7 @@
   <%= t(:hello_user) %>, <%= link_to current_user.email, account_path %>!
   <%= link_to t('logout'), destroy_user_session_path, {:id => 'log_out_link'} %>
 <% else %>
-  <%= t(:hello_user) %>, <%= link_to t('log_in'), login_path, {:id => 'log_in_link', :rel => '#login_overlay'} %>.
+  <%= link_to t('log_in'), login_path, {:id => 'log_in_link', :rel => '#login_overlay'} %>.
   <div class="simple_overlay" id="login_overlay" style="display: none">
     <% if defined?(SpreeSocial) %>
     <div class="login_social_bar">

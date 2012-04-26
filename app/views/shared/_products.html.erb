@@ -12,20 +12,7 @@
 <ul class="product-listing">
   <% products.each do |product| %>
     <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
-      <li id="product_<%= product.id %>">
-        <%= hook :products_list_item, {:product => product} do %>
-          <%= link_to raw(product.name), product, :class => 'product-name' %>
-          <%= hook :products_list_item_image, {:product => product} do %>
-          <div class="product-image-wrapper">
-              <%= link_to small_image(product), product %>
-          </div>
-          <% end %>
-          <% if defined?(SpreeReviews) %>
-            <div align="center" style="height: 15px;"><%= render 'shared/rating', :product => product %></div>
-          <% end %>  
-          <%= link_to raw("<span class='price selling'>#{product_price(product)}</span>"), product, :class => 'info' %>
-        <% end %>
-      </li>
+        <%= render :partial => "shared/product", :locals => { :product => product } %>
     <% end %>
   <% end %>
 </ul>

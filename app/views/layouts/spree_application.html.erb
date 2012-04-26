@@ -1,26 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<head data-hook="inside_head">
   <%= render 'shared/head' %>
 </head>
-<%
-   if @body_class.nil?
-     if content_for?(:sidebar)
-       @body_class = 'two-col'
-     else
-       @body_class = 'one-col'
-     end
-   end
-%>
 
-<body class="<%= @body_class %>" id="<%= @body_id %>">
+<body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
 
 <div class="wrapper">
   <div class="main_top" align="center">
     <div class="header_panel">
       <ul>
         <li class="header_panel_logo">
-          <div><%= link_to image_tag("logo.png", :alt => "Synergy logo"), root_url %></div></li>
+          <div><%= link_to image_tag("store/logo.png", :alt => "Synergy logo"), root_url %></div></li>
         <li class="header_panel_search"><%= render 'shared/search' %></li>
         <li class="header_panel_cart">
           <div><%= link_to_cart %></div>
@@ -46,8 +37,7 @@
   <div align="center">
     <div class="fixed_width">
       <div id="top_panel">
-        <div id="top_login_bar">
-          <%= hook :shared_login_bar %>
+        <div id="top_login_bar" data-hook="shared_login_bar">
         </div>
         <div id="header_menu">
           <ul class="header_menu">
@@ -59,10 +49,8 @@
       </div>
       <%= render :partial => 'shared/comparable_products' if defined?(SpreeCompareProducts) %>
       <% if content_for?(:sidebar) %>
-        <div class="sidebar">
-          <%= hook :sidebar do %>
+        <div class="sidebar" data-hook="sidebar">
             <%= yield :sidebar %>
-          <% end %>
 
           <% if Page.sidebar_links.any? %>
           <div id="sidebar_menu">
@@ -102,7 +90,7 @@
   </ul>
 <% end %>
 </div>
-<%= hook :footer_right %>
+<div data-hook="footer_right"></div>
 <% cache 'google_analytics' do %>
   <%= render 'shared/google_analytics' %>
 <% end %>

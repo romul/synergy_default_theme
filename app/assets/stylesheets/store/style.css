@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header_panel {
-  background: url("../images/header_panel.png") no-repeat;
+  background: url("/assets/store/header_panel.png") no-repeat;
   width: 1058px;
   height: 102px;
   display: table;
@@ -62,13 +62,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header_panel #keywords:focus {
-  background: url("../images/search_textinput_active.png") no-repeat;
+  background: url("/assets/store/search_textinput_active.png") no-repeat;
 }
 
 .header_panel #keywords {
   width: 250px;
   height: 22px;
-  background: url("../images/search_textinput.png") no-repeat;
+  background: url("/assets/store/search_textinput.png") no-repeat;
   border: none;
   vertical-align: bottom;
   padding-left: 10px;
@@ -128,14 +128,14 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 13px;
   height: 13px;
-  background: url("../images/remove_comparable.png") no-repeat;
+  background: url("/assets/store/remove_comparable.png") no-repeat;
   margin-top: 3px;
 }
 
 .header_panel #keywords_submit {
   width: 94px;
   height: 24px;
-  background: url("../images/search_button.png") no-repeat;
+  background: url("/assets/store/search_button.png") no-repeat;
   border: none;
   vertical-align: bottom;
   color: white;
@@ -144,12 +144,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header_panel a.empty, .header_panel a.full {
-  background: url("../images/cart.png") no-repeat left center;
+  background: url("/assets/store/cart.png") no-repeat left center;
   padding: 10px 0 10px 29px;
 }
 
 .header_panel #compare_products {
-  background: url("../images/libra.png") no-repeat left center;
+  background: url("/assets/store/libra.png") no-repeat left center;
   padding: 10px 0 10px 29px;
 }
 
@@ -227,7 +227,7 @@ ul.sidebar_menu li a:hover {
 
 .cart_table th {
   height: 34px;
-  background: url('../images/table_th1_34.png') repeat-x;
+  background: url('/assets/store/table_th1_34.png') repeat-x;
   text-align: left;
   padding-left: 20px;
 }
@@ -272,7 +272,7 @@ ul.sidebar_menu li a:hover {
   width: 1048px;
   margin-left: auto;
   margin-right: auto;
-  background: url("../images/footer_panel.png") center top no-repeat;
+  background: url("/assets/store/footer_panel.png") center top no-repeat;
 }
 
 ul.footer_menu {
@@ -485,17 +485,17 @@ button, a.button, input.button {
 }
 
 .tooltip_top {
-  background: url("../images/bubblepopup_top.png") no-repeat;
+  background: url("/assets/store/bubblepopup_top.png") no-repeat;
   height: 35px;
 }
 
 .tooltip_middle {
-  background: url("../images/bubblepopup_bg.png") repeat-y;
+  background: url("/assets/store/bubblepopup_bg.png") repeat-y;
   padding: 0 18px;
 }
 
 .tooltip_bottom {
-  background: url("../images/bubblepopup_bottom.png") no-repeat;
+  background: url("/assets/store/bubblepopup_bottom.png") no-repeat;
   height: 22px;
 }
 
@@ -706,7 +706,7 @@ hr.space {
 }
 
 #cart-detail th {
-  background: url("../images/cart_th_bg.png") repeat-x;
+  background: url("/assets/store/cart_th_bg.png") repeat-x;
   height: 34px;
   border-bottom: 1px solid silver;
 }
@@ -829,7 +829,7 @@ hr.space {
 }
 
 div.star-rating, div.star-rating a {
-  background: url('/images/star.png') no-repeat;
+  background: url('/assets/store/star.png') no-repeat;
 }
 
 div.star-rating-hover a {
@@ -879,7 +879,7 @@ ul.header_menu li a:hover {
 }
 
 #login_overlay {
-  background: url("/images/login_bar_bg.png") repeat-x #e5e5e5;
+  background: url("/assets/store/login_bar_bg.png") repeat-x #e5e5e5;
 }
 
 #login_overlay input[type=text], #login_overlay input[type=password] {
@@ -895,7 +895,7 @@ ul.header_menu li a:hover {
 }
 
 .simple_overlay .close {
-  background-image: url("/images/close_button.png");
+  background-image: url("/assets/store/close_button.png");
   position: absolute;
   right: -9px;
   top: -9px;
@@ -1025,7 +1025,7 @@ table#order_details {
 }
 
 table#order_details th {
-  background: url("../images/cart_th_bg.png") repeat-x;
+  background: url("/assets/store/cart_th_bg.png") repeat-x;
   height: 34px;
   border-bottom: 1px solid silver;
 }

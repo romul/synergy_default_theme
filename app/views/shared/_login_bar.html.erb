@@ -9,7 +9,7 @@
       <div style="margin: 6px 0"><%= t(:sign_in_through_one_of_these_services) %>:</div>
       <div style="margin: 6px 0">
         <% AuthenticationMethod.where(:environment => ::Rails.env).each do |user| %>
-          <%= link_to(image_tag("social/#{user.preferred_provider}_32.png", :size => "32x32", :alt => "#{user.preferred_provider}"), user_authentication_omniauth_authorize_path(user.preferred_provider.to_sym), :title => t(:sign_in_with_provider, :provider => user.preferred_provider)) if user.active %>
+          <%= link_to(image_tag("store/social/#{user.preferred_provider}_32.png", :size => "32x32", :alt => "#{user.preferred_provider}"), user_authentication_omniauth_authorize_path(user.preferred_provider.to_sym), :title => t(:sign_in_with_provider, :provider => user.preferred_provider)) if user.active %>
         <% end %>
       </div>
     </div>

@@ -4,7 +4,7 @@ module SynergyDefaultTheme
 
       def add_javascripts
         append_file "app/assets/javascripts/store/all.js", "//= require store/jquery.jgrowl.min\n"+
-                                                           "//= require store/jquery.tools.min"+
+                                                           "//= require store/jquery.tools.min"
       end
 
       def add_stylesheets
@@ -13,6 +13,10 @@ module SynergyDefaultTheme
                           " *= require store/style\n", 
                           :before => /\*\//, 
                           :verbose => true
+      end
+
+      def add_favicon
+        run 'rake synergy_default_theme:install:assets'
       end
 
       def add_migrations

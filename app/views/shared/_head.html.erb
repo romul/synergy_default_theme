@@ -2,18 +2,12 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
 <link rel="icon" type="image/png" href="/favicon.png" />
-
 <%== meta_data_tags %>
-<%= csrf_meta_tag %>
-
-<%= hook :inside_head do %>
-  <%== stylesheet_tags %>
-  <%= stylesheet_link_tag 'jquery.jgrowl' %>
-  <%= javascript_include_tag 'jquery-1.4.2.min', 'jquery.validate.min.js', 'rails', 'application', 'jquery.jgrowl.min', 'jquery.tools.min.js', :cache => 'jquery-libs' %>
-<% end %>
-<%= stylesheet_link_tag 'style' %>
+<%= stylesheet_link_tag 'store/all', :media => 'screen' %>
+<%= csrf_meta_tags %>
+<%= javascript_include_tag 'store/all' %>
 <% unless I18n.locale.to_s[0..1] == 'en' %>
-  <%= javascript_include_tag ['localization/messages_', I18n.locale.to_s[0..1], '.js'].join %>
+  <%= javascript_include_tag ['jquery.validate/localization/messages_', I18n.locale.to_s[0..1], '.js'].join %>
 <% end %>
 <%= render 'shared/synergy_compare_products_js' if defined?(SpreeCompareProducts) %>
 <%= render 'shared/jgrowl_startup' %>

@@ -1,7 +1,7 @@
 <% content_for :sidebar do %>
-  <%= hook :taxon_sidebar_navigation do %>
+  <div data-hook="taxon_sidebar_navigation">
     <%= render :partial => "shared/taxonomies" %>
-  <% end %>
+  </div>
 <% end %>
 <script type="text/javascript">
   $(function() {
@@ -31,8 +31,7 @@
 
 <h1><%= @product.name %></h1>
 <div id="product-show">
-  <div id="product-images">
-    <%= hook :product_images do %>
+  <div id="product-images" data-hook="product_images">
       <div id="main-image">
         <%= render 'image' %>
       </div>
@@ -49,18 +48,14 @@
       </div>
       <% end %>
 
-    <% end %>
-
     <div id="product-variants-container">
     </div>
   </div>
 
   <div id="product-description">
-    <%= hook :cart_form do %>
-      <div id="cart-form">
+      <div id="cart-form" data-hook="cart_form">
         <%= render 'cart_form' %>
       </div>
-    <% end %>
 
     <div id="product_description_menu">
       <table cellpadding="0" cellspacing="0" style="width: 300px">
@@ -90,8 +85,7 @@
   </div>
 </div>
 <div style="clear: left"></div>
-<div id="product_description">
-  <%= hook :product_description do %>
+<div id="product_description" data-hook="product_description">
     <h3><%= t(:description) %>:</h3>
 
     <div class="description-content">
@@ -101,13 +95,10 @@
         <%= t("product_has_no_description") %>
       <% end %>
     </div>
-  <% end %>
 </div>
 
-<div id="product_parameters">
-  <%= hook :product_properties do %>
+<div id="product_parameters" data-hook="product_properties">
     <%= render 'properties' %>
-  <% end %>
 </div>
 
 <% if defined?(RecentlyViewedConfiguration) && get_recently_viewed_products.count > 1 %>
@@ -133,7 +124,7 @@
 <% end %>
 
 <% unless defined?(SpreeEnhancedOptionTypes) %>
-  <%= javascript_include_tag 'product_simple' %>
+  <%= javascript_include_tag 'store/product_simple' %>
 <% else %>
 <script type="text/javascript">
 $(function() {

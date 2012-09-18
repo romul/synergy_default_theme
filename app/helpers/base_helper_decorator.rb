@@ -15,7 +15,7 @@ Spree::BaseHelper.module_eval do
   def flash_messages
     %w(notice warning error).map do |msg|
       content_tag(:script,
-      		"$.jGrowl(\"#{flash.delete(msg.to_sym)}\", { header: '#{t(msg, :default => msg).mb_chars.titleize}', sticky: true, theme: '#{msg}' });".html_safe
+      		"$.jGrowl(\"#{flash[msg.to_sym]}\", { header: '#{t(msg, :default => msg).mb_chars.titleize}', sticky: true, theme: '#{msg}' });".html_safe
 			) unless flash[msg.to_sym].blank?
     end.join("\n").html_safe
   end

@@ -1,13 +1,13 @@
 <%= form_for :order, :url => populate_orders_url do |f| %>
-<%= hook :inside_product_cart_form do %>
+<div data-hook="inside_product_cart_form">
 <div id="cart_wrapper">
 
   <% if product_price(@product) %>
-    <%= hook :product_price do %>
+    <div data-hook="product_price">
       <p class="prices">
         <span class="price selling"><%= product_price(@product) %></span>
       </p>
-    <% end %>
+    </div>
   <% end %>
 
   <% if @product.has_variants? %>
@@ -51,9 +51,9 @@
 
 </div>
 
-<% end %>
+</div>
 <% end %>
 
 <% content_for :head do %>
-  <%= javascript_include_tag 'product' %>
+  <%= javascript_include_tag 'store/product' %>
 <% end %>

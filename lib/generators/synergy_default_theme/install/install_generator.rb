@@ -4,7 +4,7 @@ module SynergyDefaultTheme
 
       def add_javascripts
         append_file "app/assets/javascripts/store/all.js", "//= require store/jquery.jgrowl.min\n"+
-                                                           "//= require store/jquery.tools.min"+
+                                                           "//= require store/jquery.tools.min"
       end
 
       def add_stylesheets

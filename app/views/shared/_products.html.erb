@@ -18,12 +18,11 @@
 </ul>
 <% end %>
  
-<% if paginated_products.respond_to?(:total_pages)
-      params.delete(:search)
-      params.delete(:taxon)
+<%
+  if paginated_products.respond_to?(:total_pages) and paginated_products.count > 0
+    params.delete(:search)
+    params.delete(:taxon)
+    will_paginate(paginated_products, :previous_label => "&#171; #{t('previous')}", :next_label => "#{t('next')} &#187;")
+  end
 %>
-  <%= will_paginate(paginated_products,
-                    :previous_label => "&#171; #{t('previous')}",
-                    :next_label => "#{t('next')} &#187;") %>
-<% end %>
  

@@ -6,9 +6,6 @@
 <%= stylesheet_link_tag 'store/all', :media => 'screen' %>
 <%= csrf_meta_tags %>
 <%= javascript_include_tag 'store/all' %>
-<% unless I18n.locale.to_s[0..1] == 'en' %>
-  <%= javascript_include_tag ['jquery.validate/localization/messages_', I18n.locale.to_s[0..1], '.js'].join %>
-<% end %>
 <%= render 'shared/synergy_compare_products_js' if defined?(SpreeCompareProducts) %>
 <%= render 'shared/jgrowl_startup' %>
 <%= yield :head %>
